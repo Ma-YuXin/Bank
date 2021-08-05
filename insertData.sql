@@ -1,1 +1,0 @@
-insert into user(id,password) values(100000,"100000");

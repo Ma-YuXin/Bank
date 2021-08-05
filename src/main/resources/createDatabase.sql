@@ -1,0 +1,16 @@
+DROP DATABASE IF EXISTS BANK;
+CREATE DATABASE BANK;
+USE BANK;
+CREATE TABLE USER(
+                     ID VARCHAR(20) PRIMARY KEY ,
+                     NAME VARCHAR(20),
+                     PASSWORD VARCHAR(20),
+                     TELE_NUMBER VARCHAR(20),
+                     ADDRESS VARCHAR(100)
+);
+# CREATE TABLE ORDER(
+#      SENDER VARCHAR(20) ,
+#      RECIPIENT VARCHAR(20),
+#
+#
+# )

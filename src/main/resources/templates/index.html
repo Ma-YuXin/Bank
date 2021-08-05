@@ -78,11 +78,14 @@
              data-toggle="tab"><img
                 src="/static/images/icon_source.png">银行卡管理
         </div>
-        <div class="meun-item" href="#modifyPassword" aria-controls="modifyPassword" role="tab" data-toggle="tab"><img
-                src="/static/images/icon_change_grey.png">修改密码
-        </div>
         <div class="meun-item" href="#historyBill" aria-controls="historyBill" role="tab" data-toggle="tab"><img
                 src="/static/images/icon_house_grey.png">历史账单
+        </div>
+        <div class="meun-item" href="#userInformation" aria-controls="userInformation" role="tab" data-toggle="tab"><img
+                src="/static/images/icon_rule_grey.png">个人信息
+        </div>
+        <div class="meun-item" href="#modifyPassword" aria-controls="modifyPassword" role="tab" data-toggle="tab"><img
+                src="/static/images/icon_change_grey.png">修改密码
         </div>
         <div class="meun-title">银行业务</div>
         <div class="meun-item" href="#deposit" aria-controls="deposit" role="tab" data-toggle="tab"><img
@@ -189,12 +192,10 @@
                             共20页
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
+                            <i><b><</b></i>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
+                            <i><b>></b></i>
                         </li>
                     </ul>
                 </footer>
@@ -375,7 +376,7 @@
                         <div class="form-group text-right">
                             <div class="col-xs-offset-4 col-xs-5" style="margin-left: 169px;">
                                 <button type="reset" class="btn btn-xs btn-white">取 消</button>
-                                <button type="submit" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>
                     </form>
@@ -467,12 +468,10 @@
                             共20页
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
+                            <i><b><</b></i>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
+                            <i><b>></b></i>
                         </li>
                     </ul>
                 </footer>
@@ -501,6 +500,97 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
+            </div>
+            <!-- 个人信息模块 -->
+            <div role="tabpanel" class="tab-pane" id="userInformation">
+                <div class="check-div form-inline">
+                    <span href="#modifyMultiple" aria-controls="modifyMultiple" role="tab" data-toggle="tab"
+                          style="cursor: pointer;"><span><b><</b></span>&nbsp;&nbsp;修改多项</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="btn btn-yellow btn-xs " data-toggle="modal"> 当前用户ID:123414 </span></div>
+                <div class="data-div">
+                    <div class="row tableHeader">
+
+                        <div class="col-xs-5" align="center">
+                            信息
+                        </div>
+                        <div class="col-xs-2">
+                            值
+                        </div>
+
+                        <div class="col-xs-1" align="right">
+                            操作
+                        </div>
+                    </div>
+                    <div class="tablebody">
+                        <div class="row">
+                            <div class="col-xs-5 " align="center">
+                                电话
+                            </div>
+                            <div class="col-xs-2">
+                                13917349812
+                            </div>
+                            <div class="col-xs-1" align="right">
+                                <button class="btn btn-success btn-xs" data-toggle="modal"
+                                        data-target="#modifySingleInformation">
+                                    修改
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tablebody">
+                        <div class="row">
+                            <div class="col-xs-5 " align="center">
+                                名字
+                            </div>
+                            <div class="col-xs-2">杜甫
+                            </div>
+                            <div class="col-xs-1" align="right">
+                                <button class="btn btn-success btn-xs" data-toggle="modal"
+                                        data-target="#modifySingleInformation">
+                                    修改
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--弹出修改单项信息窗口-->
+                <div class="modal fade" id="modifySingleInformation" role="dialog"
+                     aria-labelledby="gridSystemModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">修改个人信息</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form class="form-horizontal">
+                                        <div class="form-group ">
+                                            <label class="col-xs-3 control-label">新信息：</label>
+                                            <div class="col-xs-8 ">
+                                                <input type="email" class="form-control input-sm neat"
+                                                       id="afterModifyValue"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
             </div>
             <!--存款业务模块-->
             <div role="tabpanel" class="tab-pane" id="deposit">
@@ -544,7 +634,8 @@
                                 198341.00
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseSchool">
+                                <button class="btn btn-success btn-xs" data-toggle="modal"
+                                        data-target="#reviseSchool">
                                     存款
                                 </button>
                             </div>
@@ -574,12 +665,10 @@
                             共20页
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
+                            <i><b><</b></i>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
+                            <i><b>></b></i>
                         </li>
                     </ul>
                 </footer>
@@ -589,7 +678,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">存款</h4>
                             </div>
@@ -611,7 +701,8 @@
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">金额：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat" id="depositNumber"
+                                                <input type="" class="form-control input-sm neat"
+                                                       id="depositNumber"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -619,7 +710,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                </button>
                                 <button type="button" class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>
@@ -672,7 +764,8 @@
                                 198341.00
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#withdrawMoney">
+                                <button class="btn btn-success btn-xs" data-toggle="modal"
+                                        data-target="#withdrawMoney">
                                     取款
                                 </button>
                             </div>
@@ -701,12 +794,10 @@
                             共20页
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
+                            <i><b><</b></i>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
+                            <i><b>></b></i>
                         </li>
                     </ul>
                 </footer>
@@ -716,7 +807,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">取款</h4>
                             </div>
@@ -738,7 +830,8 @@
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">金额：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat" id="withdrawNumber"
+                                                <input type="" class="form-control input-sm neat"
+                                                       id="withdrawNumber"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -746,7 +839,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                </button>
                                 <button type="button" class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>
@@ -827,22 +921,22 @@
                             共20页
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
+                            <i><b><</b></i>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
+                            <i><b>></b></i>
                         </li>
                     </ul>
                 </footer>
 
                 <!--弹出修改用户窗口-->
-                <div class="modal fade" id="transferDetial" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div class="modal fade" id="transferDetial" role="dialog"
+                     aria-labelledby="gridSystemModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">转账</h4>
                             </div>
@@ -852,7 +946,8 @@
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">收款者姓名：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat" id="receiverName"
+                                                <input type="" class="form-control input-sm neat"
+                                                       id="receiverName"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -876,7 +971,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                </button>
                                 <button type="button" class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>
@@ -892,7 +988,8 @@
 
                 <div class="check-div form-inline" style="">
                     <div class="col-lg-4 col-xs-7 col-md-6">
-                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addBuilding">添加楼宇
+                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addBuilding">
+                            添加楼宇
                         </button>
                         <label>楼宇:&nbsp;</label>
                         <select class=" form-control">
@@ -993,12 +1090,10 @@
                             共20页
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
+                            <i><b><</b></i>
                         </li>
                         <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
+                            <i><b>></b></i>
                         </li>
                     </ul>
                 </footer>
@@ -1008,7 +1103,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">添加楼宇</h4>
                             </div>
@@ -1018,7 +1114,8 @@
                                         <div class="form-group ">
                                             <label class="col-xs-3 control-label">楼层：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm neat" id="sName"
+                                                <input type="email" class="form-control input-sm neat"
+                                                       id="sName"
                                                        placeholder="">
                                             </div>
                                         </div>
@@ -1040,7 +1137,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                </button>
                                 <button type="button" class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>
@@ -1055,7 +1153,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">修改用户</h4>
                             </div>
@@ -1103,7 +1202,8 @@
                                             <label class="col-xs-3 control-label">状态：</label>
                                             <div class="col-xs-8">
                                                 <label class="control-label">
-                                                    <input type="radio" name="situation" id="normal">正常</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" name="situation" id="normal">正常</label>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <label class="control-label">
                                                     <input type="radio" name="situation" id="forbid"> 禁用</label>
                                             </div>
@@ -1112,7 +1212,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-xs btn-white" data-dismiss="modal">取 消
+                                <button type="button" class="btn btn-xs btn-xs btn-white" data-dismiss="modal">取
+                                    消
                                 </button>
                                 <button type="button" class="btn btn-xs btn-green">确 认</button>
                             </div>
@@ -1128,7 +1229,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
                             </div>
@@ -1138,7 +1240,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                </button>
                                 <button type="button" class="btn btn-green btn-xs">确 认</button>
                             </div>
                         </div>
@@ -1147,6 +1250,55 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
+            </div>
+            <!-- 修改多项个人信息模块 -->
+            <div role="tabpanel" class="tab-pane" id="modifyMultiple">
+
+                <div class="check-div form-inline">
+                    <span href="#userInformation" aria-controls="userInformation" role="tab" data-toggle="tab"
+                          style="cursor: pointer;"><span><b><</b></span>&nbsp;&nbsp;修改单项</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="btn btn-yellow btn-xs " data-toggle="modal"> 当前用户ID:123414 </span>
+
+                </div>
+                <div style="padding: 50px 0;margin-top: 50px;background-color: #fff; text-align: right;width: 420px;margin: 50px auto;">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-4 control-label">新电话号：</label>
+                            <div class="col-xs-5">
+                                <input type="" class="form-control input-sm neat" id="telephoneNumber"
+                                       placeholder=""
+                                       style="margin-top: 7px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-4 control-label">新名字：</label>
+                            <div class="col-xs-5">
+                                <input type="" class="form-control input-sm neat" id="newName" placeholder=""
+                                       style="margin-top: 7px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-4 control-label">新地址：</label>
+                            <div class="col-xs-5">
+                                <input type="" class="form-control input-sm neat" id="newAddress" placeholder=""
+                                       style="margin-top: 7px;">
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <div class="col-xs-offset-4 col-xs-5" style="margin-left: 169px;">
+                                <button type="reset" class="btn btn-xs btn-white">取 消</button>
+                                <button class="btn btn-xs btn-green">确 认</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

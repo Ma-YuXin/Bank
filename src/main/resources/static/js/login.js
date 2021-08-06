@@ -34,9 +34,9 @@ window.onload = containerShow;
     // 登录 -> 注册
     let toSignBtn = getSelector(".toSign"),
         toLoginBtn = getSelector(".toLogin")
-    loginBox = getSelector(".login-box"),
+        loginBox = getSelector(".login-box"),
         signBox = getSelector(".sign-box");
-
+    
     toSignBtn.onclick = () => {
         loginBox.className += ' animate_login';
         signBox.className += ' animate_sign';

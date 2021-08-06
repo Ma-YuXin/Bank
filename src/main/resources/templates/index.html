@@ -9,8 +9,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta content="telephone=no" name="format-detection">
     <title>银行项目</title>
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
     <script>
         $(function () {
             $(".meun-item").click(function () {
@@ -19,13 +19,13 @@
                 var itmeObj = $(".meun-item").find("img");
                 itmeObj.each(function () {
                     var items = $(this).attr("src");
-                    items = items.replace("_grey.png", ".png");
-                    items = items.replace(".png", "_grey.png")
+                    items = items.replace("_grey.png}", ".png}");
+                    items = items.replace(".png}", "_grey.png}")
                     $(this).attr("src", items);
                 });
                 var attrObj = $(this).find("img").attr("src");
                 ;
-                attrObj = attrObj.replace("_grey.png", ".png");
+                attrObj = attrObj.replace("_grey.png}", ".png}");
                 $(this).find("img").attr("src", attrObj);
             });
             $("#topAD").click(function () {
@@ -47,15 +47,15 @@
         })
     </script>
     <!--[if lt IE 9]>
-    <script src="/static/js/html5shiv.min.js"></script>
-    <script src="/static/js/respond.min.js"></script>
+    <script th:src="@{/js/html5shiv.min.js}"></script>
+    <script th:src="@{/js/respond.min.js}"></script>
     <![endif]-->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/common.css" rel="stylesheet" type="text/css"/>
-    <link href="/static/css/slide.css" rel="stylesheet" type="text/css"/>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/static/css/flat-ui.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/static/css/jquery.nouislider.css" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/slide.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/flat-ui.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/jquery.nouislider.css}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
     <!-- 左侧菜单栏目块 -->
     <div class="leftMeun" id="leftMeun">
         <div id="logoDiv">
-            <p id="logoP"><img alt="银行项目" id="logo" src="/static/images/logo.png"><span>银行项目</span></p>
+            <p id="logoP"><img alt="银行项目" id="logo" th:src="@{/images/logo.png}"><span>银行项目</span></p>
         </div>
         <div id="personInfor">
             <p id="userName">杨鹏</p>
@@ -76,29 +76,29 @@
 
         <div aria-controls="bankCardManage" class="meun-item meun-item-active" data-toggle="tab" href="#bankCardManage"
              role="tab"><img
-                src="/static/images/icon_source.png">银行卡管理
+                th:src="@{/images/icon_source.png}">银行卡管理
         </div>
         <div aria-controls="historyBill" class="meun-item" data-toggle="tab" href="#historyBill" role="tab"><img
-                src="/static/images/icon_house_grey.png">历史账单
+                th:src="@{/images/icon_house_grey.png}">历史账单
         </div>
         <div aria-controls="userInformation" class="meun-item" data-toggle="tab" href="#userInformation" role="tab"><img
-                src="/static/images/icon_rule_grey.png">个人信息
+                th:src="@{/images/icon_rule_grey.png}">个人信息
         </div>
         <div aria-controls="modifyPassword" class="meun-item" data-toggle="tab" href="#modifyPassword" role="tab"><img
-                src="/static/images/icon_change_grey.png">修改密码
+                th:src="@{/images/icon_change_grey.png}">修改密码
         </div>
         <div class="meun-title">银行业务</div>
         <div aria-controls="deposit" class="meun-item" data-toggle="tab" href="#deposit" role="tab"><img
-                src="/static/images/icon_chara_grey.png">存款业务
+                th:src="@{/images/icon_chara_grey.png}">存款业务
         </div>
         <div aria-controls="withdraw" class="meun-item" data-toggle="tab" href="#withdraw" role="tab"><img
-                src="/static/images/icon_user_grey.png">取款业务
+                th:src="@{/images/icon_user_grey.png}">取款业务
         </div>
         <div aria-controls="transfer" class="meun-item" data-toggle="tab" href="#transfer" role="tab"><img
-                src="/static/images/icon_card_grey.png">转账业务
+                th:src="@{/images/icon_card_grey.png}">转账业务
         </div>
         <div aria-controls="loan" class="meun-item" data-toggle="tab" href="#loan" role="tab"><img
-                src="/static/images/icon_char_grey.png">贷款业务
+                th:src="@{/images/icon_char_grey.png}">贷款业务
         </div>
     </div>
     <!-- 右侧具体内容栏目 -->
@@ -1304,41 +1304,7 @@
     </div>
 </div>
 
-<script src="/static/js/jquery.nouislider.js"></script>
-
-<!-- this page specific inline scripts -->
-<script>
-    //min/max slider
-    function huadong(my, unit, def, max) {
-        $(my).noUiSlider({
-            range: [0, max],
-            start: [def],
-            handles: 1,
-            connect: 'upper',
-            slide: function () {
-                var val = Math.floor($(this).val());
-                $(this).find(".noUi-handle").text(
-                    val + unit
-                );
-                console.log($(this).find(".noUi-handle").parent().parent().html());
-            },
-            set: function () {
-                var val = Math.floor($(this).val());
-                $(this).find(".noUi-handle").text(
-                    val + unit
-                );
-            }
-        });
-        $(my).val(def, true);
-    }
-
-    huadong('.slider-minmax1', "分钟", "5", 30);
-    huadong('.slider-minmax2', "分钟", "6", 15);
-    huadong('.slider-minmax3', "分钟", "10", 60);
-    huadong('.slider-minmax4', "次", "2", 10);
-    huadong('.slider-minmax5', "天", "3", 7);
-    huadong('.slider-minmax6', "天", "8", 10);
-</script>
+<script th:src="@{/js/jquery.nouislider.js}"></script>
 </body>
 
 </html>

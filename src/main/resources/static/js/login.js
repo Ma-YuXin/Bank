@@ -34,9 +34,9 @@ window.onload = containerShow;
     // 登录 -> 注册
     let toSignBtn = getSelector(".toSign"),
         toLoginBtn = getSelector(".toLogin")
-        loginBox = getSelector(".login-box"),
+    loginBox = getSelector(".login-box"),
         signBox = getSelector(".sign-box");
-    
+
     toSignBtn.onclick = () => {
         loginBox.className += ' animate_login';
         signBox.className += ' animate_sign';
@@ -50,4 +50,50 @@ window.onload = containerShow;
 
 })(window, document);
 
+
+
 // Ajax 请求发送
+<!--点击登录与注册按钮时发送相应的请求-->
+// function sendLoginRequest() {
+//
+//     var username = document.getElementById("login-user").value.toString();
+//
+//     var password = document.getElementById("login-password").value.toString();
+//
+//     $.ajax({
+//         url: "http://localhost:8080/user/login",
+//         data: {
+//             username: username,
+//             password: password
+//         },
+//         type: "get",
+//         dataType: "text",
+//         success: function (result) {
+//             console.log(result)//如何发送成功
+//             window.open(result.result);
+//             // $("#message").html(html); //在html页面id=ulul的标签里显示html内容
+//         }, error: function () {
+//             console.log("error")
+//         },
+//         complete: function () {
+//             console.log("complate")
+//         }
+//     });
+// }
+//
+// function sendRegisterRequest() {
+//     var username = document.getElementById("sign-user");
+//
+//     var password = document.getElementById("sign-password");
+//
+//     $.ajax({
+//         url: "http://localhost:8080/user/register",
+//         data: {
+//             username: username,
+//             password: password
+//         },
+//         type: "get",
+//         dataType: "json"
+//
+//     });
+// }

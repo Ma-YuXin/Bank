@@ -14,12 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (request.getSession().getAttribute("loginUser") == null) {//没有session说明用户为登录，进行拦截；
-            request.setAttribute("message", "没有登录请先登录");
-            request.getRequestDispatcher("/login.html").forward(request, response);return true;
-
-        }else{
+        Object loginUSer = request.getSession().getAttribute("loginUser");
+        if (loginUSer == null) {//没有session说明用户未登录，进行拦截；
+            request.setAttribute("message", "没有登录,请先登录!!!");
+            request.getRequestDispatcher("/login.html").forward(request, response);
             return false;
+        } else {
+            return true;
         }
     }
 }

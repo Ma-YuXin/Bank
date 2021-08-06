@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/login.html","/","/css/**","/js/**","/images/**","/fonts/**");
+//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/index.html");
     }
 
     @Override
@@ -23,5 +23,5 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("login");
         registry.addViewController("/login.html").setViewName("login");
         registry.addViewController("/index.html").setViewName("index");
-    }
+        }
 }

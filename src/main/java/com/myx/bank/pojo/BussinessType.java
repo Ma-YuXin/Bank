@@ -1,5 +1,12 @@
 package com.myx.bank.pojo;
 
+/**
+ * description: BussinessType <br>
+ * date: 2021/8/6 22:19 <br>
+ * author: MYX <br>
+ * version: 1.0 <br>
+ */
+
 import java.util.Random;
 
 public enum BussinessType {

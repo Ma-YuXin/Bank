@@ -1,4 +1,4 @@
-package com.myx.util;
+package com.myx.bank.util;
 
 import org.junit.jupiter.api.Test;
 

@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="银行项目 数据库 web">
-    <meta name="keywords" content="银行项目 社交 占座 ">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="银行项目 数据库 web" name="description">
+    <meta content="银行项目 社交 占座 " name="keywords">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="telephone=no" name="format-detection">
     <title>银行项目</title>
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
@@ -51,11 +51,11 @@
     <script src="/static/js/respond.min.js"></script>
     <![endif]-->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/slide.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/flat-ui.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/jquery.nouislider.css">
+    <link href="/static/css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/slide.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/flat-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/jquery.nouislider.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
     <!-- 左侧菜单栏目块 -->
     <div class="leftMeun" id="leftMeun">
         <div id="logoDiv">
-            <p id="logoP"><img id="logo" alt="银行项目" src="/static/images/logo.png"><span>银行项目</span></p>
+            <p id="logoP"><img alt="银行项目" id="logo" src="/static/images/logo.png"><span>银行项目</span></p>
         </div>
         <div id="personInfor">
             <p id="userName">杨鹏</p>
@@ -74,30 +74,30 @@
         </div>
         <div class="meun-title">账号管理</div>
 
-        <div class="meun-item meun-item-active" href="#bankCardManage" aria-controls="bankCardManage" role="tab"
-             data-toggle="tab"><img
+        <div aria-controls="bankCardManage" class="meun-item meun-item-active" data-toggle="tab" href="#bankCardManage"
+             role="tab"><img
                 src="/static/images/icon_source.png">银行卡管理
         </div>
-        <div class="meun-item" href="#historyBill" aria-controls="historyBill" role="tab" data-toggle="tab"><img
+        <div aria-controls="historyBill" class="meun-item" data-toggle="tab" href="#historyBill" role="tab"><img
                 src="/static/images/icon_house_grey.png">历史账单
         </div>
-        <div class="meun-item" href="#userInformation" aria-controls="userInformation" role="tab" data-toggle="tab"><img
+        <div aria-controls="userInformation" class="meun-item" data-toggle="tab" href="#userInformation" role="tab"><img
                 src="/static/images/icon_rule_grey.png">个人信息
         </div>
-        <div class="meun-item" href="#modifyPassword" aria-controls="modifyPassword" role="tab" data-toggle="tab"><img
+        <div aria-controls="modifyPassword" class="meun-item" data-toggle="tab" href="#modifyPassword" role="tab"><img
                 src="/static/images/icon_change_grey.png">修改密码
         </div>
         <div class="meun-title">银行业务</div>
-        <div class="meun-item" href="#deposit" aria-controls="deposit" role="tab" data-toggle="tab"><img
+        <div aria-controls="deposit" class="meun-item" data-toggle="tab" href="#deposit" role="tab"><img
                 src="/static/images/icon_chara_grey.png">存款业务
         </div>
-        <div class="meun-item" href="#withdraw" aria-controls="withdraw" role="tab" data-toggle="tab"><img
+        <div aria-controls="withdraw" class="meun-item" data-toggle="tab" href="#withdraw" role="tab"><img
                 src="/static/images/icon_user_grey.png">取款业务
         </div>
-        <div class="meun-item" href="#transfer" aria-controls="transfer" role="tab" data-toggle="tab"><img
+        <div aria-controls="transfer" class="meun-item" data-toggle="tab" href="#transfer" role="tab"><img
                 src="/static/images/icon_card_grey.png">转账业务
         </div>
-        <div class="meun-item" href="#loan" aria-controls="loan" role="tab" data-toggle="tab"><img
+        <div aria-controls="loan" class="meun-item" data-toggle="tab" href="#loan" role="tab"><img
                 src="/static/images/icon_char_grey.png">贷款业务
         </div>
     </div>
@@ -109,11 +109,11 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <!--银行卡管理模块-->
-            <div role="tabpanel" class="tab-pane active" id="bankCardManage">
+            <div class="tab-pane active" id="bankCardManage" role="tabpanel">
                 <!--添加银行卡-->
                 <div class="check-div form-inline">
                     <div class="col-xs-3">
-                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addBankCard">添加银行卡
+                        <button class="btn btn-yellow btn-xs" data-target="#addBankCard" data-toggle="modal">添加银行卡
                         </button>
                     </div>
                 </div>
@@ -157,11 +157,11 @@
                                 198341.00
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal"
-                                        data-target="#modifyBankCard">
+                                <button class="btn btn-success btn-xs" data-target="#modifyBankCard"
+                                        data-toggle="modal">
                                     修改
                                 </button>
-                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteBankCard">
+                                <button class="btn btn-danger btn-xs" data-target="#deleteBankCard" data-toggle="modal">
                                     删除
                                 </button>
                             </div>
@@ -200,11 +200,11 @@
                     </ul>
                 </footer>
                 <!--弹出添加银行卡窗口-->
-                <div class="modal fade" id="addBankCard" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="addBankCard" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">添加银行卡</h4>
                             </div>
@@ -214,25 +214,25 @@
                                         <div class="form-group ">
                                             <label class="col-xs-3 control-label">银行卡号：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm neat"
-                                                       id="addBankCardNumber"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="addBankCardNumber"
+                                                       placeholder=""
+                                                       type="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">密码：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="addBankCardPassword"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="addBankCardPassword"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">确认密码：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="addBankCardRepeatPassword"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="addBankCardRepeatPassword"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -249,8 +249,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -260,11 +260,11 @@
                 <!-- /.modal -->
 
                 <!--弹出修改银行卡信息窗口-->
-                <div class="modal fade" id="modifyBankCard" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="modifyBankCard" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">修改银行卡信息</h4>
                             </div>
@@ -274,25 +274,25 @@
                                         <div class="form-group ">
                                             <label class="col-xs-3 control-label">银行卡号：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm neat"
-                                                       id="modifyBankCardNumber"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="modifyBankCardNumber"
+                                                       placeholder=""
+                                                       type="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">密码：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="modifyBankCardPassword"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="modifyBankCardPassword"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">确认密码：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="modifyRepeatBankCardPassword"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="modifyRepeatBankCardPassword"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -309,8 +309,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -320,11 +320,11 @@
                 <!-- /.modal -->
 
                 <!--弹出删除银行卡警告窗口-->
-                <div class="modal fade" id="deleteBankCard" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="deleteBankCard" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">提示</h4>
                             </div>
@@ -334,8 +334,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn  btn-xs btn-danger">确 认</button>
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                                <button class="btn  btn-xs btn-danger" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -346,7 +346,7 @@
 
             </div>
             <!-- 修改密码模块 -->
-            <div role="tabpanel" class="tab-pane" id="modifyPassword">
+            <div class="tab-pane" id="modifyPassword" role="tabpanel">
                 <div class="check-div">
                     原始密码为12312313
                 </div>
@@ -355,27 +355,27 @@
                         <div class="form-group">
                             <label class="col-xs-4 control-label">原密码：</label>
                             <div class="col-xs-5">
-                                <input type="" class="form-control input-sm neat" id="oldPassword" placeholder=""
-                                       style="margin-top: 7px;">
+                                <input class="form-control input-sm neat" id="oldPassword" placeholder="" style="margin-top: 7px;"
+                                       type="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">新密码：</label>
                             <div class="col-xs-5">
-                                <input type="" class="form-control input-sm neat" id="newPassword" placeholder=""
-                                       style="margin-top: 7px;">
+                                <input class="form-control input-sm neat" id="newPassword" placeholder="" style="margin-top: 7px;"
+                                       type="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">重复密码：</label>
                             <div class="col-xs-5">
-                                <input type="" class="form-control input-sm neat" id="repeatPassword" placeholder=""
-                                       style="margin-top: 7px;">
+                                <input class="form-control input-sm neat" id="repeatPassword" placeholder="" style="margin-top: 7px;"
+                                       type="">
                             </div>
                         </div>
                         <div class="form-group text-right">
                             <div class="col-xs-offset-4 col-xs-5" style="margin-left: 169px;">
-                                <button type="reset" class="btn btn-xs btn-white">取 消</button>
+                                <button class="btn btn-xs btn-white" type="reset">取 消</button>
                                 <button class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>
@@ -384,12 +384,12 @@
 
             </div>
             <!-- 历史账单模块 -->
-            <div role="tabpanel" class="tab-pane" id="historyBill">
+            <div class="tab-pane" id="historyBill" role="tabpanel">
 
                 <div class="check-div form-inline">
                     <div class="col-xs-5">
-                        <input type="text" class=" form-control input-sm" placeholder="输入文字搜索"
-                               style="	height: 40px!important;">
+                        <input class=" form-control input-sm" placeholder="输入文字搜索" style="	height: 40px!important;"
+                               type="text">
                         <button class="btn btn-white btn-xs ">查 询</button>
                     </div>
 
@@ -439,7 +439,7 @@
                                 1345516.55
                             </div>
                             <div class="col-xs-1">
-                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteHistory">
+                                <button class="btn btn-danger btn-xs" data-target="#deleteHistory" data-toggle="modal">
                                     删除记录
                                 </button>
                             </div>
@@ -477,11 +477,11 @@
                 </footer>
 
                 <!--弹出删除违约记录警告窗口-->
-                <div class="modal fade" id="deleteHistory" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="deleteHistory" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">提示</h4>
                             </div>
@@ -491,8 +491,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-danger">确 定</button>
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                                <button class="btn btn-xs btn-danger" type="button">确 定</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -502,9 +502,9 @@
                 <!-- /.modal -->
             </div>
             <!-- 个人信息模块 -->
-            <div role="tabpanel" class="tab-pane" id="userInformation">
+            <div class="tab-pane" id="userInformation" role="tabpanel">
                 <div class="check-div form-inline">
-                    <span href="#modifyMultiple" aria-controls="modifyMultiple" role="tab" data-toggle="tab"
+                    <span aria-controls="modifyMultiple" data-toggle="tab" href="#modifyMultiple" role="tab"
                           style="cursor: pointer;"><span><b><</b></span>&nbsp;&nbsp;修改多项</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -516,28 +516,28 @@
                 <div class="data-div">
                     <div class="row tableHeader">
 
-                        <div class="col-xs-5" align="center">
+                        <div align="center" class="col-xs-5">
                             信息
                         </div>
                         <div class="col-xs-2">
                             值
                         </div>
 
-                        <div class="col-xs-1" align="right">
+                        <div align="right" class="col-xs-1">
                             操作
                         </div>
                     </div>
                     <div class="tablebody">
                         <div class="row">
-                            <div class="col-xs-5 " align="center">
+                            <div align="center" class="col-xs-5 ">
                                 电话
                             </div>
                             <div class="col-xs-2">
                                 13917349812
                             </div>
-                            <div class="col-xs-1" align="right">
-                                <button class="btn btn-success btn-xs" data-toggle="modal"
-                                        data-target="#modifySingleInformation">
+                            <div align="right" class="col-xs-1">
+                                <button class="btn btn-success btn-xs" data-target="#modifySingleInformation"
+                                        data-toggle="modal">
                                     修改
                                 </button>
                             </div>
@@ -545,14 +545,14 @@
                     </div>
                     <div class="tablebody">
                         <div class="row">
-                            <div class="col-xs-5 " align="center">
+                            <div align="center" class="col-xs-5 ">
                                 名字
                             </div>
                             <div class="col-xs-2">杜甫
                             </div>
-                            <div class="col-xs-1" align="right">
-                                <button class="btn btn-success btn-xs" data-toggle="modal"
-                                        data-target="#modifySingleInformation">
+                            <div align="right" class="col-xs-1">
+                                <button class="btn btn-success btn-xs" data-target="#modifySingleInformation"
+                                        data-toggle="modal">
                                     修改
                                 </button>
                             </div>
@@ -560,12 +560,12 @@
                     </div>
                 </div>
                 <!--弹出修改单项信息窗口-->
-                <div class="modal fade" id="modifySingleInformation" role="dialog"
-                     aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="modifySingleInformation"
+                     role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">修改个人信息</h4>
                             </div>
@@ -575,17 +575,17 @@
                                         <div class="form-group ">
                                             <label class="col-xs-3 control-label">新信息：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm neat"
-                                                       id="afterModifyValue"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="afterModifyValue"
+                                                       placeholder=""
+                                                       type="email">
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                     </div>
@@ -593,7 +593,7 @@
                 </div>
             </div>
             <!--存款业务模块-->
-            <div role="tabpanel" class="tab-pane" id="deposit">
+            <div class="tab-pane" id="deposit" role="tabpanel">
 
                 <div class="data-div">
                     <div class="row tableHeader">
@@ -634,8 +634,8 @@
                                 198341.00
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal"
-                                        data-target="#reviseSchool">
+                                <button class="btn btn-success btn-xs" data-target="#reviseSchool"
+                                        data-toggle="modal">
                                     存款
                                 </button>
                             </div>
@@ -674,12 +674,12 @@
                 </footer>
 
                 <!--弹出修改用户窗口-->
-                <div class="modal fade" id="reviseSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="reviseSchool" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                        type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">存款</h4>
                             </div>
@@ -701,18 +701,18 @@
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">金额：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="depositNumber"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="depositNumber"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
                                 </button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -723,7 +723,7 @@
 
             </div>
             <!--取款业务模块-->
-            <div role="tabpanel" class="tab-pane" id="withdraw">
+            <div class="tab-pane" id="withdraw" role="tabpanel">
 
                 <div class="data-div">
                     <div class="row tableHeader">
@@ -764,8 +764,8 @@
                                 198341.00
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal"
-                                        data-target="#withdrawMoney">
+                                <button class="btn btn-success btn-xs" data-target="#withdrawMoney"
+                                        data-toggle="modal">
                                     取款
                                 </button>
                             </div>
@@ -803,12 +803,12 @@
                 </footer>
 
                 <!--弹出修改用户窗口-->
-                <div class="modal fade" id="withdrawMoney" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="withdrawMoney" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                        type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">取款</h4>
                             </div>
@@ -830,18 +830,18 @@
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">金额：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="withdrawNumber"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="withdrawNumber"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
                                 </button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -851,7 +851,7 @@
                 <!-- /.modal -->
             </div>
             <!--转账业务模块-->
-            <div role="tabpanel" class="tab-pane" id="transfer">
+            <div class="tab-pane" id="transfer" role="tabpanel">
                 <div class="data-div">
                     <div class="row tableHeader">
                         <div class="col-xs-2 ">
@@ -891,8 +891,8 @@
                                 198341.00
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal"
-                                        data-target="#transferDetial">
+                                <button class="btn btn-success btn-xs" data-target="#transferDetial"
+                                        data-toggle="modal">
                                     转账
                                 </button>
                             </div>
@@ -930,13 +930,13 @@
                 </footer>
 
                 <!--弹出修改用户窗口-->
-                <div class="modal fade" id="transferDetial" role="dialog"
-                     aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="transferDetial"
+                     role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                        type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">转账</h4>
                             </div>
@@ -946,34 +946,34 @@
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">收款者姓名：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="receiverName"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="receiverName"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">收款者卡号：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       id="receiverBankCardNumber"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="receiverBankCardNumber"
+                                                       placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">金额：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
                                 </button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -984,11 +984,11 @@
 
             </div>
             <!--贷款业务模块-->
-            <div role="tabpanel" class="tab-pane" id="loan">
+            <div class="tab-pane" id="loan" role="tabpanel">
 
                 <div class="check-div form-inline" style="">
                     <div class="col-lg-4 col-xs-7 col-md-6">
-                        <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addBuilding">
+                        <button class="btn btn-yellow btn-xs" data-target="#addBuilding" data-toggle="modal">
                             添加楼宇
                         </button>
                         <label>楼宇:&nbsp;</label>
@@ -1002,7 +1002,7 @@
                     </div>
                     <div class="col-lg-4 col-lg-offset-4 col-xs-4 col-md-5 "
                          style="padding-right: 40px;text-align: right;">
-                        <input type="text" class=" form-control input-sm " placeholder="输入文字搜索">
+                        <input class=" form-control input-sm " placeholder="输入文字搜索" type="text">
                         <button class="btn btn-white btn-xs ">查 询</button>
                     </div>
                 </div>
@@ -1029,15 +1029,15 @@
                         <div class="sitTable">
                             <table class="table  table-responsive">
                                 <tr>
-                                    <td valign="middle" class="col-xs-2" rowspan="3">图书馆第一层</td>
+                                    <td class="col-xs-2" rowspan="3" valign="middle">图书馆第一层</td>
                                     <td class="col-xs-3">第一自习室</td>
                                     <td class="col-xs-2">2</td>
                                     <td class="col-xs-2" style="padding-left: 40px!important;">3</td>
                                     <td class="col-xs-3" style="padding-left: 50px!important;">
-                                        <a class="linkCcc" href="#sitDetail" aria-controls="char" role="tab"
-                                           data-toggle="tab">座位信息</a>
-                                        <a class="linkCcc" href="#time" aria-controls="char" role="tab"
-                                           data-toggle="tab">时间段设置</a>
+                                        <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#sitDetail"
+                                           role="tab">座位信息</a>
+                                        <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#time"
+                                           role="tab">时间段设置</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1045,10 +1045,10 @@
                                     <td class="col-xs-2">2</td>
                                     <td class="col-xs-2" style="padding-left: 40px!important;">3</td>
                                     <td class="col-xs-3" style="padding-left: 50px!important;">
-                                        <a class="linkCcc" href="#sitDetail" aria-controls="char" role="tab"
-                                           data-toggle="tab">座位信息</a>
-                                        <a class="linkCcc" href="#time" aria-controls="char" role="tab"
-                                           data-toggle="tab">时间段设置</a>
+                                        <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#sitDetail"
+                                           role="tab">座位信息</a>
+                                        <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#time"
+                                           role="tab">时间段设置</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1056,10 +1056,10 @@
                                     <td class="col-xs-2">2</td>
                                     <td class="col-xs-2" style="padding-left: 40px!important;">3</td>
                                     <td class="col-xs-3" style="padding-left: 50px!important;">
-                                        <a class="linkCcc" href="#sitDetail" aria-controls="char" role="tab"
-                                           data-toggle="tab">座位信息</a>
-                                        <a class="linkCcc" href="#time" aria-controls="char" role="tab"
-                                           data-toggle="tab">时间段设置</a>
+                                        <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#sitDetail"
+                                           role="tab">座位信息</a>
+                                        <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#time"
+                                           role="tab">时间段设置</a>
                                     </td>
                                 </tr>
                             </table>
@@ -1099,12 +1099,12 @@
                 </footer>
 
                 <!--弹出添加楼宇窗口-->
-                <div class="modal fade" id="addBuilding" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="addBuilding" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                        type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">添加楼宇</h4>
                             </div>
@@ -1114,32 +1114,32 @@
                                         <div class="form-group ">
                                             <label class="col-xs-3 control-label">楼层：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm neat"
-                                                       id="sName"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="sName"
+                                                       placeholder=""
+                                                       type="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">区域：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="" class="form-control input-sm neat" id="sLink"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="sLink" placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">座位数：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm neat" id="sOrd"
-                                                       placeholder="">
+                                                <input class="form-control input-sm neat" id="sOrd" placeholder=""
+                                                       type="">
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
                                 </button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -1149,12 +1149,12 @@
                 <!-- /.modal -->
 
                 <!--弹出修改用户窗口-->
-                <div class="modal fade" id="reviseUser" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="reviseUser" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                        type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">修改用户</h4>
                             </div>
@@ -1164,58 +1164,58 @@
                                         <div class="form-group ">
                                             <label class="col-xs-3 control-label">用户名：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="email" class="form-control input-sm"
-                                                       placeholder="">
+                                                <input class="form-control input-sm" placeholder=""
+                                                       type="email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">真实姓名：</label>
                                             <div class="col-xs-8 ">
-                                                <input type="" class="form-control input-sm" placeholder="">
+                                                <input class="form-control input-sm" placeholder="" type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">电子邮箱：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm" placeholder="">
+                                                <input class="form-control input-sm" placeholder="" type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">电话：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm" placeholder="">
+                                                <input class="form-control input-sm" placeholder="" type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">地区：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm" placeholder="">
+                                                <input class="form-control input-sm" placeholder="" type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">权限：</label>
                                             <div class="col-xs-8">
-                                                <input type="" class="form-control input-sm" placeholder="">
+                                                <input class="form-control input-sm" placeholder="" type="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">状态：</label>
                                             <div class="col-xs-8">
                                                 <label class="control-label">
-                                                    <input type="radio" name="situation" id="normal">正常</label>
+                                                    <input id="normal" name="situation" type="radio">正常</label>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <label class="control-label">
-                                                    <input type="radio" name="situation" id="forbid"> 禁用</label>
+                                                    <input id="forbid" name="situation" type="radio"> 禁用</label>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-xs btn-white" data-dismiss="modal">取
+                                <button class="btn btn-xs btn-xs btn-white" data-dismiss="modal" type="button">取
                                     消
                                 </button>
-                                <button type="button" class="btn btn-xs btn-green">确 认</button>
+                                <button class="btn btn-xs btn-green" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -1225,12 +1225,12 @@
                 <!-- /.modal -->
 
                 <!--弹出删除用户警告窗口-->
-                <div class="modal fade" id="deleteUser" role="dialog" aria-labelledby="gridSystemModalLabel">
+                <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="deleteUser" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close"><span
+                                <button aria-label="Close" class="close" data-dismiss="modal"
+                                        type="button"><span
                                         aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
                             </div>
@@ -1240,9 +1240,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消
+                                <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
                                 </button>
-                                <button type="button" class="btn btn-green btn-xs">确 认</button>
+                                <button class="btn btn-green btn-xs" type="button">确 认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -1252,10 +1252,10 @@
                 <!-- /.modal -->
             </div>
             <!-- 修改多项个人信息模块 -->
-            <div role="tabpanel" class="tab-pane" id="modifyMultiple">
+            <div class="tab-pane" id="modifyMultiple" role="tabpanel">
 
                 <div class="check-div form-inline">
-                    <span href="#userInformation" aria-controls="userInformation" role="tab" data-toggle="tab"
+                    <span aria-controls="userInformation" data-toggle="tab" href="#userInformation" role="tab"
                           style="cursor: pointer;"><span><b><</b></span>&nbsp;&nbsp;修改单项</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1271,28 +1271,28 @@
                         <div class="form-group">
                             <label class="col-xs-4 control-label">新电话号：</label>
                             <div class="col-xs-5">
-                                <input type="" class="form-control input-sm neat" id="telephoneNumber"
-                                       placeholder=""
-                                       style="margin-top: 7px;">
+                                <input class="form-control input-sm neat" id="telephoneNumber" placeholder=""
+                                       style="margin-top: 7px;"
+                                       type="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">新名字：</label>
                             <div class="col-xs-5">
-                                <input type="" class="form-control input-sm neat" id="newName" placeholder=""
-                                       style="margin-top: 7px;">
+                                <input class="form-control input-sm neat" id="newName" placeholder="" style="margin-top: 7px;"
+                                       type="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-xs-4 control-label">新地址：</label>
                             <div class="col-xs-5">
-                                <input type="" class="form-control input-sm neat" id="newAddress" placeholder=""
-                                       style="margin-top: 7px;">
+                                <input class="form-control input-sm neat" id="newAddress" placeholder="" style="margin-top: 7px;"
+                                       type="">
                             </div>
                         </div>
                         <div class="form-group text-right">
                             <div class="col-xs-offset-4 col-xs-5" style="margin-left: 169px;">
-                                <button type="reset" class="btn btn-xs btn-white">取 消</button>
+                                <button class="btn btn-xs btn-white" type="reset">取 消</button>
                                 <button class="btn btn-xs btn-green">确 认</button>
                             </div>
                         </div>

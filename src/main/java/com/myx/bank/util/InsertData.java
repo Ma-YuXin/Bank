@@ -1,10 +1,12 @@
-package com.myx.util;
+package com.myx.bank.util;
 
-import com.myx.pojo.Bank;
-import com.myx.pojo.BussinessType;
+import com.myx.bank.pojo.Bank;
+import com.myx.bank.pojo.BussinessType;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class InsertData {

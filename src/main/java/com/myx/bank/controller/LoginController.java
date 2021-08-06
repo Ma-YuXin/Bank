@@ -1,14 +1,17 @@
 package com.myx.bank.controller;
 
+
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+
+@Controller
 public class LoginController {
-    @RequestMapping("/login")
-    public String Login() {
-        return "login";
+    @GetMapping("index")//页面的url地址
+    public String getindex(Model model)//对应函数
+    {
+        model.addAttribute("name","bigsai");
+        return "in";//与templates中index.html对应
     }
-
 }

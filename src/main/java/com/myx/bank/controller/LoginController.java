@@ -28,10 +28,11 @@ public class LoginController {
             model.addAttribute("message", "用户名或密码为空！！！");
             return "login";//与templates中login.html对应
         } else {
-            Collection<BankCardManage>bankcards= new BankCardManage().getSome();
-                    model.addAttribute("bankcards",bankcards);
+
             httpSession.setAttribute("loginUser",username);
             return "redirect:/index.html";//与templates中index.html对应
+//                      return "index";//与templates中index.html对应
+
         }
     }
 }

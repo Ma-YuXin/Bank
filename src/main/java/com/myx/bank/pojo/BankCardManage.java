@@ -1,5 +1,6 @@
 package com.myx.bank.pojo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -78,18 +79,12 @@ public class BankCardManage {
                 '}';
     }
 
-    public Collection<BankCardManage> getSome() {
-        Collection<BankCardManage> collections = null;
+    public Collection<BankCardManage> some() {
+        Collection<BankCardManage> collections = new ArrayList<BankCardManage>();
         collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
-        collections.add(new BankCardManage("李白", Bank.中国银行, 213414125, 12341234, 2134.5121));
+        collections.add(new BankCardManage("李白1", Bank.中国银行, 213414125, 12341234, 2134.5121));
+        collections.add(new BankCardManage("李白2", Bank.中国银行, 213414125, 12341234, 2134.5121));
+          //   System.out.println("随机产生了几个BankCardManage对象并返回");
         return collections;
     }
 }

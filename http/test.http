@@ -1,3 +1,7 @@
+GET http://localhost:8080/user/login?username=asdf&password=asdf
+Accept: application/json
+
+###
 http://localhost:8080/user/login?username=&password=
 Accept: application/json
 

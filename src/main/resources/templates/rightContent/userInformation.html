@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="tab-pane" id="userInformation" role="tabpanel" th:fragment="userInformationList">
+    <div class="check-div form-inline">
+                    <span aria-controls="modifyMultiple" data-toggle="tab" href="#modifyMultiple" role="tab"
+                          style="cursor: pointer;"><span><b><</b></span>&nbsp;&nbsp;修改多项</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="btn btn-yellow btn-xs " data-toggle="modal"> 当前用户ID:123414 </span></div>
+    <div class="data-div">
+        <div class="row tableHeader">
+
+            <div align="center" class="col-xs-5">
+                信息
+            </div>
+            <div class="col-xs-2">
+                值
+            </div>
+
+            <div align="right" class="col-xs-1">
+                操作
+            </div>
+        </div>
+        <div class="tablebody">
+            <div class="row">
+                <div align="center" class="col-xs-5 ">
+                    电话
+                </div>
+                <div class="col-xs-2">
+                    13917349812
+                </div>
+                <div align="right" class="col-xs-1">
+                    <button class="btn btn-success btn-xs" data-target="#modifySingleInformation"
+                            data-toggle="modal">
+                        修改
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="tablebody">
+            <div class="row">
+                <div align="center" class="col-xs-5 ">
+                    名字
+                </div>
+                <div class="col-xs-2">杜甫
+                </div>
+                <div align="right" class="col-xs-1">
+                    <button class="btn btn-success btn-xs" data-target="#modifySingleInformation"
+                            data-toggle="modal">
+                        修改
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹出修改单项信息窗口-->
+    <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="modifySingleInformation"
+         role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal"
+                            type="button"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改个人信息</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form class="form-horizontal">
+                            <div class="form-group ">
+                                <label class="col-xs-3 control-label">新信息：</label>
+                                <div class="col-xs-8 ">
+                                    <input class="form-control input-sm neat" id="afterModifyValue"
+                                           placeholder=""
+                                           type="email">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
+                    </button>
+                    <button class="btn btn-xs btn-green" type="button">确 认</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- 修改多项个人信息模块 -->
+</div>
+</html>

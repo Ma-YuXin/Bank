@@ -10,8 +10,14 @@ import java.util.Collection;
  * version: 1.0 <br>
  */
 public class BankCardManage {
+
     private String userName;
     private Bank bank;
+    private int bankCardNumber;
+    private int userId;
+    private double remainingBalance;
+
+
 
     public String getUserName() {
         return userName;
@@ -61,9 +67,7 @@ public class BankCardManage {
         this.remainingBalance = remainingBalance;
     }
 
-    private int bankCardNumber;
-    private int userId;
-    private double remainingBalance;
+
 
     public BankCardManage() {
     }

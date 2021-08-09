@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 左侧菜单栏目块 -->
+<div class="leftMeun" id="leftMeun" th:fragment="sideBar">
+    <div id="logoDiv">
+        <p id="logoP"><img alt="银行项目" id="logo" th:src="@{/images/logo.png}"><span>银行项目</span></p>
+    </div>
+    <div id="personInfor">
+        <p id="userName">李白</p>
+        <p><span>账号: [[${session.loginUser}]]</span></p>
+        <p>
+            <a href="login.html">退出登录</a>
+        </p>
+    </div>
+    <div class="meun-title">账号管理</div>
+
+    <div aria-controls="bankCardManage" class="meun-item meun-item-active" data-toggle="tab" onclick="bankcard()"
+         role="tab"><img th:src="@{/images/icon_source.png}">银行卡管理
+    </div>
+
+    <div class="meun-item" data-toggle="tab" role="tab" aria-controls="historyBill" href="#historyBill"><img
+            th:src="@{/images/icon_house_grey.png}">历史账单
+    </div>
+
+    <div aria-controls="userInformation" class="meun-item" data-toggle="tab" href="#userInformation" role="tab"><img
+            th:src="@{/images/icon_rule_grey.png}">个人信息
+    </div>
+    <div aria-controls="modifyPassword" class="meun-item" data-toggle="tab" href="#modifyPassword" role="tab"><img
+            th:src="@{/images/icon_change_grey.png}">修改密码
+    </div>
+    <div class="meun-title">银行业务</div>
+    <div aria-controls="deposit" class="meun-item" data-toggle="tab" onclick="bankcard()" role="tab"><img
+            th:src="@{/images/icon_chara_grey.png}">存款业务
+    </div>
+    <div aria-controls="withdraw" class="meun-item" data-toggle="tab" onclick="bankcard()" role="tab"><img
+            th:src="@{/images/icon_user_grey.png}">取款业务
+    </div>
+    <div aria-controls="transfer" class="meun-item" data-toggle="tab" onclick="bankcard()" role="tab"><img
+            th:src="@{/images/icon_card_grey.png}">转账业务
+    </div>
+    <div aria-controls="loan" class="meun-item" data-toggle="tab" href="#loan" role="tab"><img
+            th:src="@{/images/icon_char_grey.png}">贷款业务
+    </div>
+</div>
+</html>

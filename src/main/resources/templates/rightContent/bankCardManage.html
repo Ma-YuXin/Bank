@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--银行卡管理模块-->
+<div class="tab-pane active" id="bankCardManage" role="tabpanel" th:fragment="bankCardManageList">
+    <!--添加银行卡-->
+    <div class="check-div form-inline">
+        <div class="col-xs-3">
+            <button class="btn btn-yellow btn-xs" data-target="#addBankCard" data-toggle="modal">添加银行卡
+            </button>
+        </div>
+    </div>
+    <div class="data-div">
+        <div class="row tableHeader">
+            <div class="col-xs-2 ">
+                用户名
+            </div>
+            <div class="col-xs-2">
+                所属银行
+            </div>
+            <div class="col-xs-2">
+                银行卡号
+            </div>
+            <div class="col-xs-2">
+                账号
+            </div>
+            <div class="col-xs-2">
+                余额
+            </div>
+            <div class="col-xs-2">
+                操作
+            </div>
+        </div>
+        <div class="tablebody" id="bankCardList1">
+
+        </div>
+
+
+    </div>
+    <!--页码块-->
+    <footer class="footer">
+        <ul class="pagination">
+            <li>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                页
+            </li>
+            <li class="gray">
+                共20页
+            </li>
+            <li>
+                <i><b><</b></i>
+            </li>
+            <li>
+                <i><b>></b></i>
+            </li>
+        </ul>
+    </footer>
+    <!--弹出添加银行卡窗口-->
+    <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="addBankCard" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加银行卡</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form class="form-horizontal">
+                            <div class="form-group ">
+                                <label class="col-xs-3 control-label">银行卡号：</label>
+                                <div class="col-xs-8 ">
+                                    <input class="form-control input-sm neat" id="addBankCardNumber"
+                                           placeholder=""
+                                           type="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">密码：</label>
+                                <div class="col-xs-8 ">
+                                    <input class="form-control input-sm neat" id="addBankCardPassword"
+                                           placeholder=""
+                                           type="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">确认密码：</label>
+                                <div class="col-xs-8">
+                                    <input class="form-control input-sm neat" id="addBankCardRepeatPassword"
+                                           placeholder=""
+                                           type="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">所属银行：</label>
+                                <div class="col-xs-8">
+                                    <select class=" form-control select-neat">
+                                        <option value="">中国银行</option>
+                                        <option value="">建设银行</option>
+                                        <option value="">工商银行</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                    <button class="btn btn-xs btn-green" type="button">确 认</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <!--弹出修改银行卡信息窗口-->
+    <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="modifyBankCard" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改银行卡信息</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form class="form-horizontal">
+                            <div class="form-group ">
+                                <label class="col-xs-3 control-label">银行卡号：</label>
+                                <div class="col-xs-8 ">
+                                    <input class="form-control input-sm neat" id="modifyBankCardNumber"
+                                           placeholder=""
+                                           type="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">密码：</label>
+                                <div class="col-xs-8 ">
+                                    <input class="form-control input-sm neat" id="modifyBankCardPassword"
+                                           placeholder=""
+                                           type="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">确认密码：</label>
+                                <div class="col-xs-8">
+                                    <input class="form-control input-sm neat"
+                                           id="modifyRepeatBankCardPassword"
+                                           placeholder=""
+                                           type="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">所属银行：</label>
+                                <div class="col-xs-8">
+                                    <select class=" form-control select-neat">
+                                        <option value="">中国银行</option>
+                                        <option value="">建设银行</option>
+                                        <option value="">工商银行</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                    <button class="btn btn-xs btn-green" type="button">确 认</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <!--弹出删除银行卡警告窗口-->
+    <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="deleteBankCard" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        确定要删除该银行卡？删除后不可恢复！
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
+                    <button class="btn  btn-xs btn-danger" type="button">确 认</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+</html>

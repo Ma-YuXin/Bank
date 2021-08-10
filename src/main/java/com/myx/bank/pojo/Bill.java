@@ -7,51 +7,51 @@ package com.myx.bank.pojo;
  */
 
 public class Bill {
-    private int SENDER;
-    private int PAYEE;
-    private double VALUE;
-    private String type;
+    protected int sender;
+    protected int payee;
+    protected double value;
+    protected String type;
 
     public Bill() {
     }
 
-    public Bill(int SENDER, int PAYEE, double VALUE, String type) {
-        this.SENDER = SENDER;
-        this.PAYEE = PAYEE;
-        this.VALUE = VALUE;
+    public Bill(int sender, int payee, double value, String type) {
+        this.sender = sender;
+        this.payee = payee;
+        this.value = value;
         this.type = type;
     }
 
 
-    public int getSENDER() {
-        return SENDER;
+    public int getsender() {
+        return sender;
     }
 
-    public void setSENDER(int SENDER) {
-        this.SENDER = SENDER;
+    public void setsender(int sender) {
+        this.sender = sender;
     }
 
-    public int getPAYEE() {
-        return PAYEE;
+    public int getpayee() {
+        return payee;
     }
 
-    public void setPAYEE(int PAYEE) {
-        this.PAYEE = PAYEE;
+    public void setpayee(int payee) {
+        this.payee = payee;
     }
 
-    public double getVALUE() {
-        return VALUE;
+    public double getvalue() {
+        return value;
     }
 
-    public void setVALUE(double VALUE) {
-        this.VALUE = VALUE;
+    public void setvalue(double value) {
+        this.value = value;
     }
 
-    public String getType() {
+    public String gettype() {
         return type;
     }
 
-    public void setType(String type) {
+    public void settype(String type) {
         this.type = type;
     }
 
@@ -59,9 +59,9 @@ public class Bill {
     @Override
     public String toString() {
         return "Bill{" +
-                "SENDER=" + SENDER +
-                ", PAYEE=" + PAYEE +
-                ", VALUE=" + VALUE +
+                "sender=" + sender +
+                ", payee=" + payee +
+                ", value=" + value +
                 ", type='" + type + '\'' +
                 '}';
     }

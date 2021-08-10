@@ -15,19 +15,19 @@
     <div class="data-div">
         <div class="row tableHeader">
             <div class="col-xs-2 ">
-                转账者银行卡号
-            </div>
-            <div class="col-xs-1 ">
                 转账者姓名
             </div>
-            <div class="col-xs-2">
-                所属银行
+            <div class="col-xs-2 ">
+                转账者卡号
+            </div>
+            <div class="col-xs-1">
+                账单类型
             </div>
             <div class="col-xs-2">
                 收款者姓名
             </div>
             <div class="col-xs-2 ">
-                收款者银行卡号
+                收款者卡号
             </div>
             <div class="col-xs-2">
                 金额
@@ -36,32 +36,8 @@
                 操作
             </div>
         </div>
-        <div class="tablebody">
-            <div class="row">
-                <div class="col-xs-2 ">
-                    6426398978
-                </div>
-                <div class="col-xs-1">
-                    邓超
-                </div>
-                <div class="col-xs-2">
-                    中国银行
-                </div>
-                <div class="col-xs-2">
-                    杜甫
-                </div>
-                <div class="col-xs-2">
-                    1234553146534
-                </div>
-                <div class="col-xs-2">
-                    1345516.55
-                </div>
-                <div class="col-xs-1">
-                    <button class="btn btn-danger btn-xs" data-target="#deleteHistory" data-toggle="modal">
-                        删除记录
-                    </button>
-                </div>
-            </div>
+        <div class="tablebody" id="historyBillList">
+
         </div>
     </div>
     <!--页码块-->

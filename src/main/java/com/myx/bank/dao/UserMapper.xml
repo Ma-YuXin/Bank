@@ -45,7 +45,7 @@
         set address=#{address}
         where id = #{id}
     </update>
-    <insert id="addUser" parameterType="com.myx.bank.pojo.User  ">
+    <insert id="addUser" parameterType="com.myx.bank.pojo.User">
         insert into user(id, password)
         values (#{ID}, #{password})
     </insert>

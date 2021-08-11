@@ -27,6 +27,20 @@ public class UserImpl implements UserDao {
 
     }
 
+    @Override
+    public void addUser(User user) {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtil.getSqlSession();
+            sqlSession.insert("com.myx.bank.dao.UserDao.addUser",user);
+        }finally {
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
+        }
+    }
+
     public User getUserById(int id) {
         SqlSession sqlSession = null;
         try {
@@ -39,6 +53,22 @@ public class UserImpl implements UserDao {
     }
 
     @Override
+    public String getUserNameById(int id) {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtil.getSqlSession();
+            UserDao userDao = sqlSession.getMapper(UserDao.class);
+            return userDao.getUserNameById(id);
+
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
+        }
+    }
+
+    @Override
     public void changePassword(Map<String, Object> map) {
         SqlSession sqlSession = null;
         try {
@@ -46,7 +76,10 @@ public class UserImpl implements UserDao {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changePassword(map);
         } finally {
-            Objects.requireNonNull(sqlSession).close();
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
         }
     }
 
@@ -58,7 +91,10 @@ public class UserImpl implements UserDao {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changeInformation(user);
         } finally {
-            Objects.requireNonNull(sqlSession).close();
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
         }
     }
 
@@ -70,7 +106,10 @@ public class UserImpl implements UserDao {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changeName(map);
         } finally {
-            Objects.requireNonNull(sqlSession).close();
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
         }
     }
 
@@ -82,7 +121,10 @@ public class UserImpl implements UserDao {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changeAddress(map);
         } finally {
-            Objects.requireNonNull(sqlSession).close();
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
         }
     }
 
@@ -94,7 +136,10 @@ public class UserImpl implements UserDao {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changePhoneNumber(map);
         } finally {
-            Objects.requireNonNull(sqlSession).close();
+            if (sqlSession != null) {
+                sqlSession.commit();
+                sqlSession.close();
+            }
         }
     }
 }

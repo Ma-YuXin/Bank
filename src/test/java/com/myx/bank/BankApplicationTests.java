@@ -9,7 +9,6 @@ import javax.sql.DataSource;
 @SpringBootTest
 class BankApplicationTests {
 @Autowired
-    DataSource dataSource;
     @Test
     void contextLoads() {
 

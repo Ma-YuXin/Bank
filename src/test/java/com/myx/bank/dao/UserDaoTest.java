@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * description: UserDaoTest <br>
@@ -33,8 +32,8 @@ public class UserDaoTest {
     @Test
     public void changePassword() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id",100);
-        map.put("password","101");
+        map.put("id", 100);
+        map.put("password", "101");
         userImpl.changePassword(map);
     }
 
@@ -46,24 +45,34 @@ public class UserDaoTest {
     @Test
     public void changeName() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id","100");
-        map.put("name","白居易");
+        map.put("id", "100");
+        map.put("name", "白居易");
         userImpl.changeName(map);
     }
 
     @Test
     public void changeAddress() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id","100");
-        map.put("address","北京");
+        map.put("id", "100");
+        map.put("address", "北京");
         userImpl.changeAddress(map);
     }
 
     @Test
     public void changePhoneNumber() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id","100");
-        map.put("phoneNumber","12345");
+        map.put("id", "100");
+        map.put("phoneNumber", "12345");
         userImpl.changePhoneNumber(map);
+    }
+
+    @Test
+    public void getUserNameById() {
+        System.out.println(userImpl.getUserNameById(100));
+    }
+
+    @Test
+    public void addUser() {
+        userImpl.addUser(new User(10, "10086", "李白", "102", "山西太原"));
     }
 }

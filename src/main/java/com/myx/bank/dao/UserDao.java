@@ -16,6 +16,7 @@ public interface UserDao {
 
     User getUserById(int id);//通过id查询用户
 
+    String getUserNameById(int id);
 
     void changeInformation(User user);
 
@@ -27,4 +28,5 @@ public interface UserDao {
 
     void changePhoneNumber(Map<String, Object> map);
 
+    void addUser(User user);
 }

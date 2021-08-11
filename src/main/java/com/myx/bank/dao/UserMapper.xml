@@ -8,23 +8,27 @@
         from user
     </select>
     <select id="getUserById" resultType="com.myx.bank.pojo.User" parameterType="int">
-        select *
+        select id, phone_number as phoneNumber, name, password, address
         from user
         where ID = #{id}
     </select>
-
+    <select id="getUserNameById" parameterType="int" resultType="String">
+        select name
+        from user
+        where ID = #{id}
+    </select>
     <update id="changeInformation" parameterType="com.myx.bank.pojo.User">
         update user
         set address=#{address},
             name=#{name},
             phone_number=#{phoneNumber}
-        where id = #{id}
+        where ID = #{ID}
     </update>
 
-    <update id="changePassword" parameterType="map">
+    <update id="changePassword" parameterType="Map">
         update user
-        set password=#{password}
-        where id = #{id}
+        set PASSWORD=#{password}
+        where ID = #{id}
     </update>
     <update id="changeName" parameterType="com.myx.bank.pojo.User">
         update user
@@ -41,5 +45,8 @@
         set address=#{address}
         where id = #{id}
     </update>
-
+    <insert id="addUser" parameterType="com.myx.bank.pojo.User  ">
+        insert into user(id, password)
+        values (#{ID}, #{password})
+    </insert>
 </mapper>

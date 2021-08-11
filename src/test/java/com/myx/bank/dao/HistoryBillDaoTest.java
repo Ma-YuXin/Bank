@@ -19,7 +19,7 @@ public class HistoryBillDaoTest {
     public void getHistoryBillTest() {
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         HistoryBillDao historyBillDao = sqlSession.getMapper(HistoryBillDao.class);
-        List<HistoryBill> historyBillList = historyBillDao.getHistoryBill();
+        List<HistoryBill> historyBillList = historyBillDao.getHistoryBillList();
         for (HistoryBill historyBill : historyBillList) {
             System.out.println(historyBill);
         }

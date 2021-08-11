@@ -11,5 +11,5 @@ import java.util.List;
  * version: 1.0 <br>
  */
 public interface HistoryBillDao {
-    List<HistoryBill> getHistoryBill();
+    List<HistoryBill> getHistoryBillList();
 }

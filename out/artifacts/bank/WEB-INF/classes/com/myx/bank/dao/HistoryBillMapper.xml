@@ -4,6 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.myx.bank.dao.HistoryBillDao">
     <select id="getHistoryBillList" resultType="com.myx.bank.pojo.HistoryBill">
-        select sender,payee,value,type ,a.name as SenderName ,b.name as PayeeName  from bill,user as a,user as b where a.id=bill.sender and b.id=bill.payee;
+        select sender,payee,value,type from bill,(select name from user where id=sender) as a,(select name from user where  id=payee)as b;
     </select>
 </mapper>

@@ -3,7 +3,43 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.myx.bank.dao.UserDao">
-    <select id="getHistoryBill" resultType="com.myx.bank.pojo.User">
-        select * from user
+    <select id="getUserList" resultType="com.myx.bank.pojo.User">
+        select *
+        from user
     </select>
+    <select id="getUserById" resultType="com.myx.bank.pojo.User" parameterType="int">
+        select *
+        from user
+        where ID = #{id}
+    </select>
+
+    <update id="changeInformation" parameterType="com.myx.bank.pojo.User">
+        update user
+        set address=#{address},
+            name=#{name},
+            phone_number=#{phoneNumber}
+        where id = #{id}
+    </update>
+
+    <update id="changePassword" parameterType="map">
+        update user
+        set password=#{password}
+        where id = #{id}
+    </update>
+    <update id="changeName" parameterType="com.myx.bank.pojo.User">
+        update user
+        set name=#{name}
+        where id = #{id}
+    </update>
+    <update id="changePhoneNumber" parameterType="com.myx.bank.pojo.User">
+        update user
+        set phone_number=#{phoneNumber}
+        where id = #{id}
+    </update>
+    <update id="changeAddress" parameterType="com.myx.bank.pojo.User">
+        update user
+        set address=#{address}
+        where id = #{id}
+    </update>
+
 </mapper>

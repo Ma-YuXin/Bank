@@ -1,12 +1,12 @@
 package com.myx.bank.dao;
 
-import com.myx.bank.pojo.HistoryBill;
 import com.myx.bank.pojo.User;
-import com.myx.bank.util.MybatisUtil;
-import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * description: UserDaoTest <br>
@@ -15,13 +15,55 @@ import java.util.List;
  * version: 1.0 <br>
  */
 public class UserDaoTest {
+    UserImpl userImpl = new UserImpl();
+
     @Test
     public void getUserList() {
-        SqlSession sqlSession = MybatisUtil.getSqlSession();
-        UserDao userDao=sqlSession.getMapper(UserDao.class);
-        List<User>userList=userDao.getUserList();
+        Collection<User> userList = userImpl.getUserList();
         for (User user : userList) {
             System.out.println(user);
         }
+    }
+
+    @Test
+    public void getUserById() {
+        System.out.println(userImpl.getUserById(100));
+    }
+
+    @Test
+    public void changePassword() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id",100);
+        map.put("password","101");
+        userImpl.changePassword(map);
+    }
+
+    @Test
+    public void changeInformation() {
+        userImpl.changeInformation(new User(100, "10086", "李白", "102", "山西太原"));
+    }
+
+    @Test
+    public void changeName() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id","100");
+        map.put("name","白居易");
+        userImpl.changeName(map);
+    }
+
+    @Test
+    public void changeAddress() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id","100");
+        map.put("address","北京");
+        userImpl.changeAddress(map);
+    }
+
+    @Test
+    public void changePhoneNumber() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id","100");
+        map.put("phoneNumber","12345");
+        userImpl.changePhoneNumber(map);
     }
 }

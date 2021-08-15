@@ -974,3 +974,4 @@ insert into BANKCARD(BANKCARDNUMBER, PASSWORD, BANK_NAME)
 values (353589129, 111111, "中国银行");
 insert into USER_BANKCARD(USERID, BANKCARDNUMBER)
 values (149, 353589129);
+insert into loan values(1,1.002,"贷款","每年利率只有1.002，且持续三十年")

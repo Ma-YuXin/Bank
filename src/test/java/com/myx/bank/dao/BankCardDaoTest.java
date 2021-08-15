@@ -24,7 +24,7 @@ public class BankCardDaoTest {
     }
 
     @Test
-    public void getBankCardById() {
+    public void getBankCardByIdTest() {
         List<BankCardManage>list =bankCardImpl.getBankCardById(100);
         for (BankCardManage bankCardManage : list) {
             System.out.println(bankCardManage);
@@ -32,12 +32,12 @@ public class BankCardDaoTest {
     }
 
     @Test
-    public void addBankCard() {
+    public void addBankCardTest() {
         bankCardImpl.addBankCard(new BankCard(1234567,"12341",134.234, Bank.建设银行.toString()));
     }
 
     @Test
-    public void deleteBankCard() {
+    public void deleteBankCardTest() {
         bankCardImpl.deleteBankCard(1234567);
     }
 }

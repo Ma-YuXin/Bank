@@ -8,7 +8,8 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/bank?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
+                <property name="url"
+                          value="jdbc:mysql://localhost:3306/bank?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="superme699"/>
             </dataSource>
@@ -19,5 +20,6 @@
         <mapper resource="com/myx/bank/dao/UserMapper.xml"/>
         <mapper resource="com/myx/bank/dao/BankCardMapper.xml"/>
         <mapper resource="com/myx/bank/dao/UserBankCardMapper.xml"/>
+        <mapper resource="com/myx/bank/dao/LoanMapper.xml"/>
     </mappers>
 </configuration>

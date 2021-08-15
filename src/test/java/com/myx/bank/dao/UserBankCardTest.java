@@ -16,14 +16,14 @@ public class UserBankCardTest {
     UserBankCardImpl userBankCardImpl = new UserBankCardImpl();
 
     @Test
-    public void addBankCard() {
+    public void addBankCardTest() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("userid", 100);
         map.put("bankcardnumber", 1234525);
         userBankCardImpl.addBankCard(map);
     }
     @Test
-    public void deleteBankCard() {
+    public void deleteBankCardTest() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("userid", 100);
         map.put("bankcardnumber", 1234523525);

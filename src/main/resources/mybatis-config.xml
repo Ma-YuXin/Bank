@@ -17,5 +17,7 @@
     <mappers>
         <mapper resource="com/myx/bank/dao/HistoryBillMapper.xml"/>
         <mapper resource="com/myx/bank/dao/UserMapper.xml"/>
+        <mapper resource="com/myx/bank/dao/BankCardMapper.xml"/>
+        <mapper resource="com/myx/bank/dao/UserBankCardMapper.xml"/>
     </mappers>
 </configuration>

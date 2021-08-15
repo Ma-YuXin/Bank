@@ -1,5 +1,7 @@
 package com.myx.bank.pojo;
 
+import org.springframework.lang.Nullable;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
@@ -45,7 +47,7 @@ public class HistoryBill extends Bill {
     public HistoryBill() {
     }
 
-    public HistoryBill(int sender, int payee, double value, String type, String senderName, String payeeName) {
+    public HistoryBill(@Nullable int sender,@Nullable int payee, double value, String type,@Nullable String senderName,@Nullable String payeeName) {
         super(sender, payee, value, type);
         SenderName = senderName;
         PayeeName = payeeName;

@@ -27,7 +27,7 @@ public class HistoryBillDaoTest {
 
     @Test
     public void getHistoryBillListById() {
-        List<HistoryBill> list = historyBill.getHistoryBillListById(100);
+        List<HistoryBill> list = historyBill.getHistoryBillListById(101);
         for (HistoryBill bill : list) {
             System.out.println(bill);
         }
@@ -47,7 +47,7 @@ public class HistoryBillDaoTest {
         bill.setsender(100);
         bill.setvalue(1234.234);
         bill.settype(BussinessType.取款.toString());
-        historyBill.insertHistoryBill(bill);
+        historyBill.insertHistoryWithdrawBill(bill);
     }
 
     @Test

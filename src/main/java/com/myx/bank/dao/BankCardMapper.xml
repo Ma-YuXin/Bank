@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myx.bank.dao.BankCardDao">
+    <select id="getUserBankCard" resultType="com.myx.bank.pojo.BankCardManage">
+        select name              as userName,
+               bank_name         as bank,
+               bankCardNumber,
+               user.id           as userId,
+               remaining_balance as remainingBalance
+        from user_bankcard
+                 natural join bankcard,
+             user
+        where user.id = user_bankcard.userId
+    </select>
+    <select id="getBankCardById" parameterType="int"
+            resultType="com.myx.bank.pojo.BankCardManage">
+        select name              as userName,
+               bank_name         as bank,
+               bankCardNumber,
+               user.id           as userId,
+               remaining_balance as remainingBalance
+        from user_bankcard
+                 natural join bankcard,
+             user
+        where user.id = user_bankcard.userId
+          and id = #{id}</select>
+    <insert id="addBankCard" parameterType="com.myx.bank.pojo.BankCard">
+        insert into bankcard
+        values (#{bankcardnumber}, #{password}, #{remaining_balance}, #{bank_name})
+    </insert>
+    <delete id="deleteBankCard" parameterType="int">
+        delete
+        from bankcard
+        where bankcardnumber = #{bankcardnumber}
+
+    </delete>
+
+
+</mapper>

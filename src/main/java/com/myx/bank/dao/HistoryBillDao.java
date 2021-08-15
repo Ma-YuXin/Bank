@@ -1,5 +1,6 @@
 package com.myx.bank.dao;
 
+import com.myx.bank.pojo.Bill;
 import com.myx.bank.pojo.HistoryBill;
 
 import java.util.List;
@@ -12,4 +13,9 @@ import java.util.List;
  */
 public interface HistoryBillDao {
     List<HistoryBill> getHistoryBillList();
+    List<HistoryBill>getHistoryBillListById(int id);
+    void insertHistoryBill(Bill bill);
+    void insertHistoryWithdrawBill(Bill bill);
+    void insertHistoryDepositBill(Bill bill);
+    void deleteHistoryBill(Bill bill);
 }

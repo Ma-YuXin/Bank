@@ -29,4 +29,5 @@ public interface UserDao {
     void changePhoneNumber(Map<String, Object> map);
 
     void addUser(User user);
+    void deleteUser(int id);
 }

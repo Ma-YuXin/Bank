@@ -17,7 +17,7 @@ public class UserDaoTest {
     UserImpl userImpl = new UserImpl();
 
     @Test
-    public void getUserList() {
+    public void getUserListTest() {
         Collection<User> userList = userImpl.getUserList();
         for (User user : userList) {
             System.out.println(user);
@@ -25,12 +25,17 @@ public class UserDaoTest {
     }
 
     @Test
-    public void getUserById() {
+    public void getUserByIdTest() {
         System.out.println(userImpl.getUserById(100));
     }
 
     @Test
-    public void changePassword() {
+    public void deleteUserTest() {
+        userImpl.deleteUser(10);
+    }
+
+    @Test
+    public void changePasswordTest() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id", 100);
         map.put("password", "101");
@@ -38,12 +43,12 @@ public class UserDaoTest {
     }
 
     @Test
-    public void changeInformation() {
+    public void changeInformationTest() {
         userImpl.changeInformation(new User(100, "10086", "李白", "102", "山西太原"));
     }
 
     @Test
-    public void changeName() {
+    public void changeNameTest() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id", "100");
         map.put("name", "白居易");
@@ -51,7 +56,7 @@ public class UserDaoTest {
     }
 
     @Test
-    public void changeAddress() {
+    public void changeAddressTest() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id", "100");
         map.put("address", "北京");
@@ -59,7 +64,7 @@ public class UserDaoTest {
     }
 
     @Test
-    public void changePhoneNumber() {
+    public void changePhoneNumberTest() {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id", "100");
         map.put("phoneNumber", "12345");
@@ -67,12 +72,12 @@ public class UserDaoTest {
     }
 
     @Test
-    public void getUserNameById() {
+    public void getUserNameByIdTest() {
         System.out.println(userImpl.getUserNameById(100));
     }
 
     @Test
-    public void addUser() {
+    public void addUserTest() {
         userImpl.addUser(new User(10, "10086", "李白", "102", "山西太原"));
     }
 }

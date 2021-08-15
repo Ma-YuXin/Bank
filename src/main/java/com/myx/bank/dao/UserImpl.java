@@ -32,12 +32,25 @@ public class UserImpl implements UserDao {
         SqlSession sqlSession = null;
         try {
             sqlSession = MybatisUtil.getSqlSession();
-            sqlSession.insert("com.myx.bank.dao.UserDao.addUser",user);
-        }finally {
+            sqlSession.insert("com.myx.bank.dao.UserDao.addUser", user);
+        } finally {
             if (sqlSession != null) {
                 sqlSession.commit();
                 sqlSession.close();
             }
+        }
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = MybatisUtil.getSqlSession();
+            UserDao userDao = sqlSession.getMapper(UserDao.class);
+            userDao.deleteUser(id);
+            sqlSession.commit();
+        } finally {
+            sqlSession.close();
         }
     }
 
@@ -58,7 +71,9 @@ public class UserImpl implements UserDao {
         try {
             sqlSession = MybatisUtil.getSqlSession();
             UserDao userDao = sqlSession.getMapper(UserDao.class);
-            return userDao.getUserNameById(id);
+            String result = userDao.getUserNameById(id);
+            return result;
+
 
         } finally {
             if (sqlSession != null) {
@@ -75,9 +90,10 @@ public class UserImpl implements UserDao {
             sqlSession = MybatisUtil.getSqlSession();
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changePassword(map);
+            sqlSession.commit();
+
         } finally {
             if (sqlSession != null) {
-                sqlSession.commit();
                 sqlSession.close();
             }
         }
@@ -90,9 +106,10 @@ public class UserImpl implements UserDao {
             sqlSession = MybatisUtil.getSqlSession();
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changeInformation(user);
+            sqlSession.commit();
+
         } finally {
             if (sqlSession != null) {
-                sqlSession.commit();
                 sqlSession.close();
             }
         }
@@ -105,9 +122,10 @@ public class UserImpl implements UserDao {
             sqlSession = MybatisUtil.getSqlSession();
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changeName(map);
+            sqlSession.commit();
         } finally {
             if (sqlSession != null) {
-                sqlSession.commit();
+
                 sqlSession.close();
             }
         }
@@ -120,9 +138,10 @@ public class UserImpl implements UserDao {
             sqlSession = MybatisUtil.getSqlSession();
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changeAddress(map);
+            sqlSession.commit();
+
         } finally {
             if (sqlSession != null) {
-                sqlSession.commit();
                 sqlSession.close();
             }
         }
@@ -135,9 +154,10 @@ public class UserImpl implements UserDao {
             sqlSession = MybatisUtil.getSqlSession();
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             userDao.changePhoneNumber(map);
+            sqlSession.commit();
+
         } finally {
             if (sqlSession != null) {
-                sqlSession.commit();
                 sqlSession.close();
             }
         }

@@ -49,4 +49,7 @@
         insert into user(id, password)
         values (#{ID}, #{password})
     </insert>
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
 </mapper>

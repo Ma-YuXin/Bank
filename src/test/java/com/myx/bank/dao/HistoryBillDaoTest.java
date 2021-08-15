@@ -1,9 +1,8 @@
 package com.myx.bank.dao;
 
+import com.myx.bank.pojo.Bill;
+import com.myx.bank.pojo.BussinessType;
 import com.myx.bank.pojo.HistoryBill;
-import com.myx.bank.pojo.User;
-import com.myx.bank.util.MybatisUtil;
-import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -15,15 +14,65 @@ import java.util.List;
  * version: 1.0 <br>
  */
 public class HistoryBillDaoTest {
+    HistoryBillImpl historyBill = new HistoryBillImpl();
+
     @Test
     public void getHistoryBillTest() {
-        SqlSession sqlSession = MybatisUtil.getSqlSession();
-        HistoryBillDao historyBillDao = sqlSession.getMapper(HistoryBillDao.class);
-        List<HistoryBill> historyBillList = historyBillDao.getHistoryBillList();
-        for (HistoryBill historyBill : historyBillList) {
-            System.out.println(historyBill);
+        List<HistoryBill> list = historyBill.getHistoryBillList();
+        for (HistoryBill bill : list) {
+            System.out.println(bill);
         }
-        sqlSession.close();
     }
 
+
+    @Test
+    public void getHistoryBillListById() {
+        List<HistoryBill> list = historyBill.getHistoryBillListById(100);
+        for (HistoryBill bill : list) {
+            System.out.println(bill);
+        }
+    }
+
+    @Test
+    public void insertHistoryBill() {
+        historyBill.insertHistoryBill(new Bill(100, 102, 12.3, "转账"));
+        historyBill.insertHistoryBill(new Bill(102, 100, 12.3, "取款"));
+
+
+    }
+
+    @Test
+    public void insertHistoryWithdrawBill() {
+        Bill bill = new Bill();
+        bill.setsender(100);
+        bill.setvalue(1234.234);
+        bill.settype(BussinessType.取款.toString());
+        historyBill.insertHistoryBill(bill);
+    }
+
+    @Test
+    public void insertHistoryDepositBill() {
+        Bill bill = new Bill();
+        bill.setpayee(100);
+        bill.settype(BussinessType.存款.toString());
+        bill.setvalue(123.12);
+        historyBill.insertHistoryDepositBill(bill);
+
+    }
+
+    @Test
+    public void deleteHistoryBill() {
+        historyBill.deleteHistoryBill(new Bill(100, 102, 12.3, "转账"));
+//        historyBill.deleteHistoryBill(new Bill(102, 100, 12.3, "取款"));
+//        Bill bill1 = new Bill();
+//        bill1.setpayee(100);
+//        bill1.settype(BussinessType.存款.toString());
+//        bill1.setvalue(123.12);
+//        historyBill.deleteHistoryBill(bill1);
+//        Bill bill2 = new Bill();
+//        bill2.setsender(100);
+//        bill2.setvalue(1234.234);
+//        bill2.settype(BussinessType.取款.toString());
+//        historyBill.deleteHistoryBill(bill2);
+    }
 }

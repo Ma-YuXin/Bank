@@ -14,18 +14,25 @@ import java.util.List;
  * version: 1.0 <br>
  */
 public class BankCardDaoTest {
-    BankCardImpl bankCardImpl=new BankCardImpl();
+    BankCardImpl bankCardImpl = new BankCardImpl();
+
     @Test
     public void getUserBankCard() {
-        List<BankCardManage>list =bankCardImpl.getUserBankCard();
+        List<BankCardManage> list = bankCardImpl.getUserBankCard();
         for (BankCardManage bankCardManage : list) {
             System.out.println(bankCardManage);
         }
     }
 
+
+    @Test
+    public void test() {
+
+    }
+
     @Test
     public void getBankCardByIdTest() {
-        List<BankCardManage>list =bankCardImpl.getBankCardById(100);
+        List<BankCardManage> list = bankCardImpl.getBankCardById(100);
         for (BankCardManage bankCardManage : list) {
             System.out.println(bankCardManage);
         }

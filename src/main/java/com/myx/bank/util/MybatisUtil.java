@@ -27,7 +27,6 @@ public class MybatisUtil {
             e.printStackTrace();
         }
     }
-
     public static SqlSession getSqlSession() {
         return sqlSessionFactory.openSession();
     }

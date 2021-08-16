@@ -1,6 +1,5 @@
 package com.myx.bank.controller;
 
-import com.myx.bank.pojo.BankCardManage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.util.StringUtils;
 
 import javax.servlet.http.HttpSession;
-import java.util.Collection;
 
 /**
  * description: LoginController 接受前端传来的登录请求,并对Url进行映射<br>
@@ -28,10 +26,8 @@ public class LoginController {
             model.addAttribute("message", "用户名或密码为空！！！");
             return "login";//与templates中login.html对应
         } else {
-
-            httpSession.setAttribute("loginUser",username);
+            httpSession.setAttribute("loginUser", username);
             return "redirect:/index.html";//与templates中index.html对应
-//                      return "index";//与templates中index.html对应
 
         }
     }

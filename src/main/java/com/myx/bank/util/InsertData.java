@@ -10,15 +10,20 @@ import java.io.IOException;
 import java.util.Random;
 
 public class InsertData {
-
-    //启动所有写入文件方法
+    /**
+     * @Title
+     * @Description: 启动所有写入文件方法
+     **/
     public void insertIntoDatabase() throws IOException {
         insertIntoUser();
         insertIntoBill();
         insertIntoBankcardAndUserBandcard();
     }
 
-    //向insertIntoUser.sql写入user表的插入语句
+    /**
+     * @Title
+     * @Description: 向insertIntoUser.sql写入user表的插入语句
+     **/
     public void insertIntoUser() throws IOException {
         File file = new File(CommonVariables.sqlFilePath + "insertData.sql");
         FileWriter fileWriter = new FileWriter(file, true);
@@ -37,7 +42,10 @@ public class InsertData {
         }
     }
 
-    //向insertIntoBill.sql文件写入向Bill表的插入语句
+    /**
+     * @Title
+     * @Description: 向insertIntoBill.sql文件写入向Bill表的插入语句
+     **/
     public void insertIntoBill() throws IOException {
         File file = new File(CommonVariables.sqlFilePath + "insertData.sql");
         FileWriter fileWriter = new FileWriter(file, true);
@@ -75,7 +83,10 @@ public class InsertData {
         }
     }
 
-    //向insertIntoBankcardAndUserBandcard.sql文件写入向BankCard和UserBankCard表的插入语句
+    /**
+     * @Title
+     * @Description: 向insertIntoBankcardAndUserBandcard.sql文件写入向BankCard和UserBankCard表的插入语句
+     **/
     public void insertIntoBankcardAndUserBandcard() throws IOException {
         File file = new File(CommonVariables.sqlFilePath + "insertData.sql");
         FileWriter fileWriter = new FileWriter(file, true);

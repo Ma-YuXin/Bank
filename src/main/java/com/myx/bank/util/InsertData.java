@@ -29,9 +29,14 @@ public class InsertData {
         FileWriter fileWriter = new FileWriter(file, true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         try {
+            RandomGenerate randomGenerate = new RandomGenerate();
             for (int i = 100; i < 150; i++) {
                 String id = String.valueOf(i);
-                String insertWords = "insert into user(id,password) values(" + id + ",\"" + id + "\");\r\n";
+                String name = randomGenerate.chineseName();
+                String address = randomGenerate.address();
+                String phoneNumber = randomGenerate.phoneNumber();
+                String insertWords = "insert into user(id,password,address,name,phone_number) values(" + id + ",\"" + id + "\"" + ",\"" + address + "\"" + ",\"" + name + "\"" + ",\"" + phoneNumber + "\"" + ");\r\n";
+//                System.out.println(insertWords);
                 bufferedWriter.write(insertWords);
                 bufferedWriter.flush();
             }
@@ -56,7 +61,7 @@ public class InsertData {
                 String senderID = String.valueOf(i);
                 for (int t = 0; t < random.nextInt(15); t++) {
                     String payeeID = String.valueOf(random.nextInt(49) + 100);
-                    String value = String.valueOf(random.nextDouble() * 1000000);
+                    String value = String.valueOf(random.nextInt(1000000));
                     BussinessType type = BussinessType.getRandomly();
                     String insertWords = null;
                     if (type == BussinessType.取款) {
@@ -97,12 +102,14 @@ public class InsertData {
                 for (int t = 0; t < random.nextInt(10); t++) {
                     String bankCardNumber = String.valueOf(random.nextInt(1000000000) + 100000000);
                     Bank bankName = Bank.getRandomly();
-                    String insertWord = "insert into BANKCARD(BANKCARDNUMBER,PASSWORD,BANK_NAME) values(" + bankCardNumber + ",111111,\"" + bankName + "\");\r\n";
+                    int value = random.nextInt(1000000);
+                    String insertWord = "insert into BANKCARD(BANKCARDNUMBER,PASSWORD,remaining_balance,BANK_NAME) values(" + bankCardNumber + ",\"111111\"," + value + ",\"" + bankName + "\");\r\n";
                     bufferedWriter.write(insertWord);
                     String userID = String.valueOf(i);
                     String insertWord2 = "insert into USER_BANKCARD(USERID,BANKCARDNUMBER) values(" + userID + "," + bankCardNumber + ");\r\n";
                     bufferedWriter.write(insertWord2);
                     bufferedWriter.flush();
+//                    System.out.println(insertWord);
                 }
             }
             System.out.println("向insertData.sql文件写入向BankCard和UserBankCard表的插入语句成功");

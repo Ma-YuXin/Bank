@@ -27,7 +27,7 @@ public class HistoryBillDaoTest {
 
     @Test
     public void getHistoryBillListByIdTest() {
-        List<HistoryBill> list = historyBill.getHistoryBillListById(101);
+        List<HistoryBill> list = historyBill.getHistoryBillListById(123);
         for (HistoryBill bill : list) {
             System.out.println(bill);
         }

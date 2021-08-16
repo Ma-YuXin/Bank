@@ -74,12 +74,12 @@ function historyBill() {
         success: function (data) {
             console.log(data);
             $("#historyBillList").empty();
-            for(var i=0;i<data.length;i++){
+            for (var i = 0; i < data.length; i++) {
                 let str = "<div class=\"row\">" +
-                    "<div class =\"col-xs-2\">" + data[i].senderName + "</div>" +
+                    "<div class =\"col-xs-2\">" + data[i].type + "</div>" +
+                    "<div class =\"col-xs-1\">" + data[i].senderName + "</div>" +
                     "<div class =\"col-xs-2\">" + data[i].sender + "</div>" +
-                    "<div class =\"col-xs-1\">" + data[i].type + "</div>" +
-                    "<div class =\"col-xs-2\">" + data[i].payeeName + "</div>" +
+                    "<div class =\"col-xs-1\">" + data[i].payeeName + "</div>" +
                     "<div class =\"col-xs-2\">" + data[i].payee + "</div>" +
                     "<div class =\"col-xs-2\">" + data[i].value + "</div>" +
                     "<div class=\"col-xs-1\">" +

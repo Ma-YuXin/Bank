@@ -4,21 +4,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.myx.bank.dao.HistoryBillDao">
     <select id="getHistoryBillList" resultType="com.myx.bank.pojo.HistoryBill">
-        select sender, payee, value, type, a.name as SenderName, b.name as PayeeName
-        from bill,
-             user as a,
-             user as b
-        where a.id = bill.sender
-          and b.id = bill.payee;
+        select sender,
+               payee,
+               value,
+               type,
+               (select name from user where id = bill.sender) as SenderName,
+               (select name from user where id = bill.payee)  as PayeeName
+        from bill
     </select>
     <select id="getHistoryBillListById" parameterType="int" resultType="com.myx.bank.pojo.HistoryBill">
-        select distinct sender, payee, value, type, a.name as SenderName, b.name as PayeeName
-        from bill,
-             user as a,
-             user as b
-        where (bill.sender = #{id} or bill.payee = #{id})
-          and (a.id = bill.sender
-          or b.id = bill.payee)
+        select sender,
+               payee,
+               value,
+               type,
+               (select name from user where id = bill.sender) as SenderName,
+               (select name from user where id = bill.payee)  as PayeeName
+        from bill
+        where (bill.sender = #{id}
+            or bill.payee = #{id})
     </select>
     <insert id="insertHistoryBill" parameterType="com.myx.bank.pojo.Bill">
         insert into bill

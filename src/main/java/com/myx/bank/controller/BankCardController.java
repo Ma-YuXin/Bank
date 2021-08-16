@@ -20,9 +20,10 @@ import java.util.Collection;
 public class BankCardController {
     @RequestMapping("/bankCardList")
     public Collection<BankCardManage> bankCardList(HttpServletRequest httpServletRequest) {
-        System.out.println("接受到返回银行卡列表请求");
-        Integer loginUserId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
-        Collection<BankCardManage> bds = new BankCardImpl().getBankCardById(loginUserId);
+
+        Integer userId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
+        System.out.println("接受到返回银行卡列表请求,ID为：" + userId);
+        Collection<BankCardManage> bds = new BankCardImpl().getBankCardById(userId);
         return bds;
     }
 }

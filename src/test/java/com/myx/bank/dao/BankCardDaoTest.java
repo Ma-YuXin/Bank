@@ -26,11 +26,6 @@ public class BankCardDaoTest {
 
 
     @Test
-    public void test() {
-
-    }
-
-    @Test
     public void getBankCardByIdTest() {
         List<BankCardManage> list = bankCardImpl.getBankCardById(100);
         for (BankCardManage bankCardManage : list) {

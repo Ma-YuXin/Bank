@@ -20,8 +20,9 @@ import java.util.Collection;
 public class HistoryBillController {
     @RequestMapping("/historyBillList")
     public Collection<HistoryBill> list(HttpServletRequest httpServletRequest) {
-        System.out.println("接收到返回历史账单的请求");
+
         Integer userId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
+        System.out.println("接收到返回历史账单的请求,ID为：" + userId);
         Collection<HistoryBill> result = new HistoryBillImpl().getHistoryBillListById(userId);
         return result;
     }

@@ -14,7 +14,7 @@ function bankcard() {
                 alert('银行卡列表请求失败');
             },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 let stringOfId;
                 $("#bankCardList").empty();
                 $("#bankCardListDeposit").empty();
@@ -72,7 +72,7 @@ function historyBill() {
             alert("历史账单记录查询失败！！！")
         },
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             $("#historyBillList").empty();
             for (var i = 0; i < data.length; i++) {
                 let str = "<div class=\"row\">" +
@@ -94,4 +94,114 @@ function historyBill() {
 
         }
     });
+}
+
+function changeSingle() {
+    const changeSingleValue = document.getElementById("changeSingleValue").value;
+    if (state == "name") {
+
+        $.ajax({
+            url: '/changeNameSingle',
+            data: {
+                "newNameSingle": changeSingleValue
+            },
+            dataType: 'json',
+            type: 'get',
+            error: function (data) {
+                alert("修改信息失败！！！")
+            },
+            success: function (data) {
+                console.log(data);
+                alert("修改信息成功")
+            }
+        });
+    } else if (state == "address") {
+        $.ajax({
+            url: '/changeAddressSingle',
+            data: {
+                "newAddressSingle": changeSingleValue
+            },
+            dataType: 'json',
+            type: 'get',
+            error: function (data) {
+                alert("修改信息失败！！！")
+            },
+            success: function (data) {
+                console.log(data);
+                alert("修改信息成功")
+            }
+        });
+    } else if (state == "phoneNumber") {
+        $.ajax({
+            url: '/changeTelephoneNumberSingle',
+            data: {
+                "newTelephoneNumberSingle": changeSingleValue
+            },
+            dataType: 'json',
+            type: 'get',
+            error: function (data) {
+                alert("修改信息失败！！！")
+            },
+            success: function (data) {
+                console.log(data);
+                alert("修改信息成功")
+            }
+        });
+    } else {
+        alert("发生了一些未知错误");
+    }
+    document.getElementById("changeSingleValue").value = "";
+}
+
+function changeMultiple() {
+    const newNameMultiple = document.getElementById("newNameMultiple").value;
+    const newAddressMultiple = document.getElementById("newAddressMultiple").value;
+    const newTelephoneNumberMultiple = document.getElementById("newTelephoneNumberMultiple").value;
+    $.ajax({
+        url: '/changeMultiple',
+        data: {
+            "newNameMultiple": newNameMultiple,
+            "newAddressMultiple": newAddressMultiple,
+            "newTelephoneNumberMultiple": newTelephoneNumberMultiple
+        },
+        dataType: 'json',
+        type: 'get',
+        error: function (data) {
+            alert("修改多项信息失败！！！")
+        },
+        success: function (data) {
+            console.log(data);
+            alert("修改多项信息成功")
+        }
+    });
+}
+
+function changePassword() {
+
+    const oldPassword = document.getElementById("oldPassword").value;
+    console.log("旧密码为" + oldPassword);
+    const newPassword = document.getElementById("newPassword").value;
+    const repeatPassword = document.getElementById("repeatPassword").value;
+
+    if (newPassword == repeatPassword) {
+        $.ajax({
+            url: '/changePassword',
+            data: {
+                "oldPassword": oldPassword,
+                "newPassword": newPassword,
+                "repeatPassword": repeatPassword
+            },
+            dataType: 'json',
+            type: 'get',
+            error: function (data) {
+                alert("修改密码失败！！！")
+            },
+            success: function (data) {
+                console.log(data);
+                alert("修改密码成功")
+            }
+        });
+    } else {
+        alert("两次密码不一致");
+    }
 }

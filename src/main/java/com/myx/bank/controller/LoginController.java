@@ -31,6 +31,9 @@ public class LoginController {
         } else {
             httpSession.setAttribute("loginUserId", username);
             httpSession.setAttribute("loginUserName", user.getName());
+            httpSession.setAttribute("loginUserPhoneNumber", user.getPhoneNumber());
+            httpSession.setAttribute("loginUserAddress", user.getAddress());
+
             return "redirect:/index.html";//与templates中index.html对应
 
         }

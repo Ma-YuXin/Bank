@@ -6,8 +6,8 @@
         <p id="logoP"><img alt="银行项目" id="logo" th:src="@{/images/logo.png}"><span>银行项目</span></p>
     </div>
     <div id="personInfor">
-        <p id="userName">李白</p>
-        <p><span>账号: [[${session.loginUser}]]</span></p>
+        <p id="userName">[[${session.loginUserName}]]</p>
+        <p><span>账号: [[${session.loginUserId}]]</span></p>
         <p>
             <a href="login.html">退出登录</a>
         </p>

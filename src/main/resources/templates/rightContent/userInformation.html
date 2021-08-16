@@ -10,7 +10,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="btn btn-yellow btn-xs " data-toggle="modal"> 当前用户ID:123414 </span></div>
+        <span class="btn btn-yellow btn-xs " data-toggle="modal"> 当前用户ID: [[${session.loginUserId}]] </span></div>
     <div class="data-div">
         <div class="row tableHeader">
 
@@ -40,11 +40,22 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="tablebody">
             <div class="row">
                 <div align="center" class="col-xs-5 ">
                     名字
+                </div>
+                <div class="col-xs-2">杜甫
+                </div>
+                <div align="right" class="col-xs-1">
+                    <button class="btn btn-success btn-xs" data-target="#modifySingleInformation"
+                            data-toggle="modal">
+                        修改
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div align="center" class="col-xs-5 ">
+                    地址
                 </div>
                 <div class="col-xs-2">杜甫
                 </div>

@@ -1,10 +1,12 @@
 package com.myx.bank.controller;
 
+import com.myx.bank.dao.HistoryBillImpl;
 import com.myx.bank.pojo.HistoryBill;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 /**
@@ -17,9 +19,10 @@ import java.util.Collection;
 @ResponseBody
 public class HistoryBillController {
     @RequestMapping("/historyBillList")
-    public Collection<HistoryBill> list() {
+    public Collection<HistoryBill> list(HttpServletRequest httpServletRequest) {
         System.out.println("接收到返回历史账单的请求");
-        Collection<HistoryBill> result = new HistoryBill().some();
+        Integer userId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
+        Collection<HistoryBill> result = new HistoryBillImpl().getHistoryBillListById(userId);
         return result;
     }
 }

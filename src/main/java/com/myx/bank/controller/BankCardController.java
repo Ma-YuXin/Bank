@@ -1,10 +1,12 @@
 package com.myx.bank.controller;
 
+import com.myx.bank.dao.BankCardImpl;
 import com.myx.bank.pojo.BankCardManage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 
 /**
@@ -17,9 +19,10 @@ import java.util.Collection;
 @ResponseBody
 public class BankCardController {
     @RequestMapping("/bankCardList")
-    public Collection<BankCardManage> bankCardList(){
+    public Collection<BankCardManage> bankCardList(HttpServletRequest httpServletRequest) {
         System.out.println("接受到返回银行卡列表请求");
-        Collection<BankCardManage> bds= new BankCardManage().some();
+        Integer loginUserId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
+        Collection<BankCardManage> bds = new BankCardImpl().getBankCardById(loginUserId);
         return bds;
     }
 }

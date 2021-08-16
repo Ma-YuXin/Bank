@@ -1,5 +1,7 @@
 package com.myx.bank.controller;
 
+import com.myx.bank.dao.UserImpl;
+import com.myx.bank.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,14 @@ public class LoginController {
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model, HttpSession httpSession) {
-        System.out.println("接收到用户名为：" + username + " 密码为：" + password + "的用户。");
+        User user = new UserImpl().getUserById(Integer.parseInt(username));
+        System.out.println("接收到用户名为：" + username + " 密码为：" + password + " 姓名为：" + user.getName() + " 的用户。");
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             model.addAttribute("message", "用户名或密码为空！！！");
             return "login";//与templates中login.html对应
         } else {
-            httpSession.setAttribute("loginUser", username);
+            httpSession.setAttribute("loginUserId", username);
+            httpSession.setAttribute("loginUserName", user.getName());
             return "redirect:/index.html";//与templates中index.html对应
 
         }

@@ -98,53 +98,57 @@ function historyBill() {
 
 function changeSingle() {
     const changeSingleValue = document.getElementById("changeSingleValue").value;
-    if (state == "name") {
 
+
+    if (state == "name") {
+        console.log("进入修改姓名模块");
         $.ajax({
             url: '/changeNameSingle',
             data: {
                 "newNameSingle": changeSingleValue
             },
-            dataType: 'json',
+            dataType: 'text',
             type: 'get',
             error: function (data) {
-                alert("修改信息失败！！！")
+                alert("修改姓名失败！！！")
             },
             success: function (data) {
                 console.log(data);
-                alert("修改信息成功")
+                alert("修改姓名成功")
             }
         });
     } else if (state == "address") {
+        console.log("进入修改地址模块");
         $.ajax({
             url: '/changeAddressSingle',
             data: {
                 "newAddressSingle": changeSingleValue
             },
-            dataType: 'json',
+            dataType: 'text',
             type: 'get',
             error: function (data) {
-                alert("修改信息失败！！！")
+                alert("修改地址失败！！！")
             },
             success: function (data) {
                 console.log(data);
-                alert("修改信息成功")
+                alert("修改地址成功")
             }
         });
     } else if (state == "phoneNumber") {
+        console.log("进入修改电话模块");
         $.ajax({
             url: '/changeTelephoneNumberSingle',
             data: {
                 "newTelephoneNumberSingle": changeSingleValue
             },
-            dataType: 'json',
+            dataType: 'text',
             type: 'get',
             error: function (data) {
-                alert("修改信息失败！！！")
+                alert("修改电话号码失败！！！")
             },
             success: function (data) {
                 console.log(data);
-                alert("修改信息成功")
+                alert("修改电话号码成功")
             }
         });
     } else {
@@ -164,9 +168,10 @@ function changeMultiple() {
             "newAddressMultiple": newAddressMultiple,
             "newTelephoneNumberMultiple": newTelephoneNumberMultiple
         },
-        dataType: 'json',
+        dataType: 'text',
         type: 'get',
         error: function (data) {
+            console.log(data);
             alert("修改多项信息失败！！！")
         },
         success: function (data) {
@@ -174,6 +179,7 @@ function changeMultiple() {
             alert("修改多项信息成功")
         }
     });
+    document.getElementById("changeSingleValue").style.display = "false";
 }
 
 function changePassword() {
@@ -191,10 +197,11 @@ function changePassword() {
                 "newPassword": newPassword,
                 "repeatPassword": repeatPassword
             },
-            dataType: 'json',
+            dataType: 'text',
             type: 'get',
             error: function (data) {
                 alert("修改密码失败！！！")
+                console.log(data);
             },
             success: function (data) {
                 console.log(data);
@@ -203,5 +210,7 @@ function changePassword() {
         });
     } else {
         alert("两次密码不一致");
+        document.getElementById("newPassword").value = "";
+        document.getElementById("repeatPassword").value = "";
     }
 }

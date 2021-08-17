@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,46 +23,55 @@ public class ChangeInformation {
     UserImpl userImpl = new UserImpl();
 
     @RequestMapping("/changeMultiple")
-    public String changeMultiple(HttpServletRequest httpServletRequest) {
+    public String changeMultiple(HttpServletRequest httpServletRequest, HttpSession httpSession) {
         Integer userId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
+        System.out.println("接受修改多项用户信息请求请求,ID为：" + userId);
         User user = new User();
         user.setID(userId);
         user.setAddress(httpServletRequest.getParameter("newAddressMultiple"));
         user.setName(httpServletRequest.getParameter("newNameMultiple"));
         user.setPhoneNumber(httpServletRequest.getParameter("newTelephoneNumberMultiple"));
+        httpSession.setAttribute("loginUserName", user.getName());
+        httpSession.setAttribute("loginUserPhoneNumber", user.getPhoneNumber());
+        httpSession.setAttribute("loginUserAddress", user.getAddress());
         System.out.println("用户将会被修改为：" + user);
         userImpl.changeInformation(user);
-        System.out.println("接受修改多项用户信息请求请求,ID为：" + userId);
         return "修改成功";
     }
 
     @RequestMapping("/changeNameSingle")
-    public String changeNameSingle(HttpServletRequest httpServletRequest) {
+    public String changeNameSingle(HttpServletRequest httpServletRequest, HttpSession httpSession) {
         Map<String, Object> map = new HashMap<String, Object>();
+        String newName = httpServletRequest.getParameter("newNameSingle");
         map.put("id", httpServletRequest.getSession().getAttribute("loginUserId"));
-        map.put("name", httpServletRequest.getParameter("changeNameSingle"));
+        map.put("name", newName);
         userImpl.changeName(map);
-        System.out.println("接受到修改用户姓名请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId"));
+        httpSession.setAttribute("loginUserName", newName);
+        System.out.println("接受到修改用户姓名请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId") + " 姓名将改为：" + newName);
         return "修改成功";
     }
 
     @RequestMapping("/changeAddressSingle")
-    public String changeAddressSingle(HttpServletRequest httpServletRequest) {
+    public String changeAddressSingle(HttpServletRequest httpServletRequest, HttpSession httpSession) {
         Map<String, Object> map = new HashMap<String, Object>();
+        String newAddress = httpServletRequest.getParameter("newAddressSingle");
         map.put("id", httpServletRequest.getSession().getAttribute("loginUserId"));
-        map.put("address", httpServletRequest.getParameter("changeAddressSingle"));
+        map.put("address", newAddress);
         userImpl.changeAddress(map);
-        System.out.println("接受到修改用户地址请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId"));
+        httpSession.setAttribute("loginUserAddress", newAddress);
+        System.out.println("接受到修改用户地址请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId") + " 新地址将改为：" + newAddress);
         return "修改成功";
     }
 
     @RequestMapping("/changeTelephoneNumberSingle")
-    public String changeTelephoneNumberSingle(HttpServletRequest httpServletRequest) {
+    public String changeTelephoneNumberSingle(HttpServletRequest httpServletRequest, HttpSession httpSession) {
         Map<String, Object> map = new HashMap<String, Object>();
+        String telephoneNumber = httpServletRequest.getParameter("newTelephoneNumberSingle");
         map.put("id", httpServletRequest.getSession().getAttribute("loginUserId"));
-        map.put("phoneNumber", httpServletRequest.getParameter("changeTelephoneNumberSingle"));
+        map.put("phoneNumber", telephoneNumber);
         userImpl.changePhoneNumber(map);
-        System.out.println("接受到修改用户电话请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId"));
+        httpSession.setAttribute("loginUserPhoneNumber", telephoneNumber);
+        System.out.println("接受到修改用户电话请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId") + " 新电话将改为： " + telephoneNumber);
         return "修改成功";
     }
 
@@ -69,9 +79,9 @@ public class ChangeInformation {
     public String changePassword(HttpServletRequest httpServletRequest) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id", httpServletRequest.getSession().getAttribute("loginUserId"));
-        map.put("password", httpServletRequest.getSession().getAttribute("newPassword"));
+        map.put("password", httpServletRequest.getParameter("newPassword"));
         userImpl.changePassword(map);
-        System.out.println("接受到修改用户密码请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId"));
+        System.out.println("接受到修改用户密码请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId") + " 密码将改为： " + httpServletRequest.getParameter("newPassword"));
         return "修改成功";
     }
 }

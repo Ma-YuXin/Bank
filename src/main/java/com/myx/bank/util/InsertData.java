@@ -59,7 +59,7 @@ public class InsertData {
         try {
             for (int i = 100; i < 150; i++) {
                 String senderID = String.valueOf(i);
-                for (int t = 0; t < random.nextInt(15); t++) {
+                for (int t = 0; t < random.nextInt(25); t++) {
                     String payeeID = String.valueOf(random.nextInt(49) + 100);
                     String value = String.valueOf(random.nextInt(1000000));
                     BussinessType type = BussinessType.getRandomly();
@@ -99,7 +99,7 @@ public class InsertData {
         Random random = new Random();
         try {
             for (int i = 100; i < 150; i++) {
-                for (int t = 0; t < random.nextInt(10); t++) {
+                for (int t = 0; t < random.nextInt(20); t++) {
                     String bankCardNumber = String.valueOf(random.nextInt(1000000000) + 100000000);
                     Bank bankName = Bank.getRandomly();
                     int value = random.nextInt(1000000);

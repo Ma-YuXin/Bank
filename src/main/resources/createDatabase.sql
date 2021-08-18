@@ -39,3 +39,13 @@ CREATE TABLE LOAN
     NAME         VARCHAR(20) NOT NULL,
     DETIAL       VARCHAR(100)
 ) ENGINE = INNODB;
+insert into loan(INTERESTRATE, name, detial)
+values (1.0032, "低利息贷款", "每年只还0.0032%");
+insert into loan(INTERESTRATE, name, detial)
+values (1.18, "高利息贷款", "每年只还0.18%");
+insert into loan(INTERESTRATE, name, detial)
+values (1.045, "中利息贷款", "每年只还0.0045%");
+insert into loan(INTERESTRATE, name, detial)
+values (1.00, "无利息贷款", "须在三个月内还清");
+insert into loan(INTERESTRATE, name, detial)
+values (1.00, "抵押利息贷款", "需抵押你家房子");

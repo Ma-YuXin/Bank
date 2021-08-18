@@ -9,6 +9,8 @@ package com.myx.bank.pojo;
 public class Loan {
     int id;
     double interestrate;
+    String name;
+    String detial;
 
     @Override
     public String toString() {
@@ -62,6 +64,5 @@ public class Loan {
         this.detial = detial;
     }
 
-    String name;
-    String detial;
+
 }

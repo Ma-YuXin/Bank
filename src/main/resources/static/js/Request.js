@@ -1,6 +1,7 @@
 window.onload = function () {
     bankcard();
-    historyBill()
+    historyBill();
+    getLoan();
 }
 
 function bankcard() {
@@ -60,7 +61,6 @@ function bankcard() {
         }
     );
 }
-
 
 function getBankcardNumber(obj) {
     window.bankcardManageNumber = obj.parentNode.parentNode.children.item(2).textContent;
@@ -346,24 +346,29 @@ function deleteHistoryBill() {
 function transferMoney() {
     const transferNumber = document.getElementById("transferNumber").value;
     const receiverBankCardNumber = document.getElementById("receiverBankCardNumber").value;
-    $.ajax({
-        url: '/transferMoney',
-        data: {
-            "sender": window.bankcardManageNumber,
-            "money": transferNumber,
-            "payee": receiverBankCardNumber
-        },
-        dataType: "text",
-        type: "get",
-        error: function (data) {
-            console.log(data);
-            alert("转账失败");
-        },
-        success: function (data) {
-            console.log(data);
-            alert("转账成功");
-        }
-    });
+
+    if (parseFloat(window.remainingBalance) >= parseFloat(transferNumber)) {
+        $.ajax({
+            url: '/transferMoney',
+            data: {
+                "sender": window.bankcardManageNumber,
+                "money": transferNumber,
+                "payee": receiverBankCardNumber
+            },
+            dataType: "text",
+            type: "get",
+            error: function (data) {
+                console.log(data);
+                alert("转账失败");
+            },
+            success: function (data) {
+                console.log(data);
+                alert("转账成功");
+            }
+        });
+    } else {
+        alert("余额不足！！");
+    }
 }
 
 function addBankCard() {
@@ -399,4 +404,69 @@ function addBankCard() {
         document.getElementById("addBankCardPassword").value = "";
         document.getElementById("addBankCardRepeatPassword").value = "";
     }
+}
+
+function getLoan() {
+    $.ajax({
+            url: '/getLoan', //请求的url
+            type: 'post', //请求的方式
+            //form表单里要提交的内容，里面的input等写上name就会提交，这是序列化
+            dataType: "json",
+            error: function (data) {
+                alert('贷款列表请求失败');
+            },
+            success: function (data) {
+                // console.log(data);
+                let stringOfId;
+                $("#loanTable").empty();
+                if (data.length > 0) {
+                    var str = "<tr>" +
+                        "<td className=\"col-xs-2\" rowSpan=\"" + data.length + "\" valign=\"middle\">贷款</td>" +
+                        "<td className=\"col-xs-3\" style=\"padding-left: 20px;\">" + data[0].name + "</td>" +
+                        "<td className=\"col-xs-2\" style=\"padding-left: 20px;\">" + data[0].interestrate + "</td>" +
+                        "<td className=\"col-xs-2\" style=\"padding-left: 2px;\">" + data[0].detial + "</td>" +
+                        "<td className=\"col-xs-3\">" +
+                        "<a aria-controls=\"char\" className=\"linkCcc\" data-toggle=\"tab\" href=\"#LoanDetial\"" +
+                        "role=\"tab\">详细信息</a>" +
+                        "</td>" +
+                        " </tr>";
+                    $("#loanTable").append(str);
+                }
+                for (var i = 1; i < data.length; i++) {
+                    let str1 = "<tr>" +
+                        "<td className=\"col-xs-3\"style=\"padding-left: 20px;\">" + data[i].name + " </td>" +
+                        "<td className=\"col-xs-2\"style=\"padding-left: 20px;\">" + data[i].interestrate + "</td>" +
+                        "<td className=\"col-xs-2\"style=\"padding-left: 2px;\">" + data[i].detial + "</td>" +
+                        "<td className=\"col-xs-3\">" +
+                        "<a aria-controls=\"char\" className=\"linkCcc\" data-toggle=\"tab\" href=\"#LoanDetial\"" +
+                        "role=\"tab\">详细信息</a>" +
+                        "</td>" +
+                        " </tr>";
+                    $("#loanTable").append(str1);
+                }
+            }
+        }
+    );
+}
+
+function getLoanMoney() {
+    const bankcardNumber = document.getElementById("LoanBankcard").value;
+    const money = document.getElementById("loanNumber").value;
+    console.log(bankcardNumber + " " + money);
+    $.ajax({
+            url: "/getLoanMoney", //请求的url
+            type: "get", //请求的方式
+            dataType: "text",
+            data: {
+                "bankcardNumber": bankcardNumber,
+                "money": money
+            },
+            error: function (data) {
+                alert('贷款失败');
+            },
+            success: function (data) {
+                alert('贷款成功');
+            }
+        }
+    );
 }

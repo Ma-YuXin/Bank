@@ -2,39 +2,19 @@
 <html lang="en">
 <div class="tab-pane" id="loan" role="tabpanel" th:fragment="loanList">
 
-  <div class="check-div form-inline" style="">
-    <div class="col-lg-4 col-xs-7 col-md-6">
-      <button class="btn btn-yellow btn-xs" data-target="#addBuilding" data-toggle="modal">
-        添加楼宇
-      </button>
-      <label>楼宇:&nbsp;</label>
-      <select class=" form-control">
-        <option>第一教学楼</option>
-        <option>逸夫楼</option>
-        <option>综合楼</option>
-        <option>图书馆</option>
-      </select>
-      <button class="btn btn-white btn-xs ">修 改</button>
-    </div>
-    <div class="col-lg-4 col-lg-offset-4 col-xs-4 col-md-5 "
-         style="padding-right: 40px;text-align: right;">
-      <input class=" form-control input-sm " placeholder="输入文字搜索" type="text">
-      <button class="btn btn-white btn-xs ">查 询</button>
-    </div>
-  </div>
   <div class="data-div">
     <div class="row tableHeader">
       <div class="col-xs-2 " style="padding-left: 20px;">
-        楼层
+        项目
       </div>
       <div class="col-xs-3" style="padding-left: 20px;">
-        区域
+        名称
       </div>
       <div class="col-xs-2" style="padding-left: 2px;">
-        座位数
+        利率
       </div>
       <div class="col-xs-2">
-        空余座位
+        详细信息
       </div>
       <div class="col-xs-3">
         操作
@@ -43,41 +23,8 @@
     <div class="tablebody">
 
       <div class="sitTable">
-        <table class="table  table-responsive">
-          <tr>
-            <td class="col-xs-2" rowspan="3" valign="middle">图书馆第一层</td>
-            <td class="col-xs-3">第一自习室</td>
-            <td class="col-xs-2">2</td>
-            <td class="col-xs-2" style="padding-left: 40px!important;">3</td>
-            <td class="col-xs-3" style="padding-left: 50px!important;">
-              <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#sitDetail"
-                 role="tab">座位信息</a>
-              <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#time"
-                 role="tab">时间段设置</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="col-xs-3">第一自习室</td>
-            <td class="col-xs-2">2</td>
-            <td class="col-xs-2" style="padding-left: 40px!important;">3</td>
-            <td class="col-xs-3" style="padding-left: 50px!important;">
-              <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#sitDetail"
-                 role="tab">座位信息</a>
-              <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#time"
-                 role="tab">时间段设置</a>
-            </td>
-          </tr>
-          <tr>
-            <td class="col-xs-3">第一自习室</td>
-            <td class="col-xs-2">2</td>
-            <td class="col-xs-2" style="padding-left: 40px!important;">3</td>
-            <td class="col-xs-3" style="padding-left: 50px!important;">
-              <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#sitDetail"
-                 role="tab">座位信息</a>
-              <a aria-controls="char" class="linkCcc" data-toggle="tab" href="#time"
-                 role="tab">时间段设置</a>
-            </td>
-          </tr>
+        <table class="table  table-responsive" id="loanTable">
+
         </table>
       </div>
 
@@ -114,157 +61,6 @@
     </ul>
   </footer>
 
-  <!--弹出添加楼宇窗口-->
-  <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="addBuilding" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button aria-label="Close" class="close" data-dismiss="modal"
-                  type="button"><span
-                  aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">添加楼宇</h4>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <form class="form-horizontal">
-              <div class="form-group ">
-                <label class="col-xs-3 control-label">楼层：</label>
-                <div class="col-xs-8 ">
-                  <input class="form-control input-sm neat" id="sName"
-                         placeholder=""
-                         type="email">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">区域：</label>
-                <div class="col-xs-8 ">
-                  <input class="form-control input-sm neat" id="sLink" placeholder=""
-                         type="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">座位数：</label>
-                <div class="col-xs-8">
-                  <input class="form-control input-sm neat" id="sOrd" placeholder=""
-                         type="">
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
-          </button>
-          <button class="btn btn-xs btn-green" type="button">确 认</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-
-  <!--弹出修改用户窗口-->
-  <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="reviseUser" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button aria-label="Close" class="close" data-dismiss="modal"
-                  type="button"><span
-                  aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">修改用户</h4>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <form class="form-horizontal">
-              <div class="form-group ">
-                <label class="col-xs-3 control-label">用户名：</label>
-                <div class="col-xs-8 ">
-                  <input class="form-control input-sm" placeholder=""
-                         type="email">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">真实姓名：</label>
-                <div class="col-xs-8 ">
-                  <input class="form-control input-sm" placeholder="" type="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">电子邮箱：</label>
-                <div class="col-xs-8">
-                  <input class="form-control input-sm" placeholder="" type="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">电话：</label>
-                <div class="col-xs-8">
-                  <input class="form-control input-sm" placeholder="" type="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">地区：</label>
-                <div class="col-xs-8">
-                  <input class="form-control input-sm" placeholder="" type="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">权限：</label>
-                <div class="col-xs-8">
-                  <input class="form-control input-sm" placeholder="" type="">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-xs-3 control-label">状态：</label>
-                <div class="col-xs-8">
-                  <label class="control-label">
-                    <input id="normal" name="situation" type="radio">正常</label>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label class="control-label">
-                    <input id="forbid" name="situation" type="radio"> 禁用</label>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-xs btn-xs btn-white" data-dismiss="modal" type="button">取
-            消
-          </button>
-          <button class="btn btn-xs btn-green" type="button">确 认</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-
-  <!--弹出删除用户警告窗口-->
-  <div aria-labelledby="gridSystemModalLabel" class="modal fade" id="deleteUser" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button aria-label="Close" class="close" data-dismiss="modal"
-                  type="button"><span
-                  aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            确定要删除该用户？删除后不可恢复！
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消
-          </button>
-          <button class="btn btn-green btn-xs" type="button">确 认</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
   <!-- /.modal -->
 </div>
 </html>

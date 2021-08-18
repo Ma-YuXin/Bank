@@ -53,7 +53,7 @@
 
 
     <![endif]-->
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css"/>
     <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/slide.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/css/flat-ui.min.css}" rel="stylesheet" type="text/css"/>
@@ -89,6 +89,8 @@
             <div th:replace="~{rightContent/modifyMultiple::modifyMultipleList}"></div>
             <!-- 个人信息模块 -->
             <div th:replace="~{rightContent/userInformation::userInformationList}"></div>
+            <!-- 贷款详细信息模块 -->
+            <div th:replace="~{rightContent/LoanDetial::LoanDetial}"></div>
         </div>
         <script th:src="@{/js/jquery.nouislider.js}"></script>
     </div>

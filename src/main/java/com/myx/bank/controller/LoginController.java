@@ -38,5 +38,17 @@ public class LoginController {
 
         }
     }
+
+    @RequestMapping("/user/register")//页面的url请求地址
+    public String register(@RequestParam("username") String username,
+                           @RequestParam("password") String password, Model model) {
+        User user = new User();
+        user.setID(Integer.parseInt(username));
+        user.setPassword(password);
+        new UserImpl().addUser(user);
+        System.out.println("接收注册请求" + user);
+        model.addAttribute("message", "注册成功");
+        return "login";
+    }
 }
 

@@ -80,31 +80,25 @@
                             <div class="form-group ">
                                 <label class="col-xs-3 control-label">银行卡号：</label>
                                 <div class="col-xs-8 ">
-                                    <input class="form-control input-sm neat" id="addBankCardNumber"
-                                           placeholder=""
-                                           type="email">
+                                    <input class="form-control input-sm neat" id="addBankCardNumber">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3 control-label">密码：</label>
                                 <div class="col-xs-8 ">
-                                    <input class="form-control input-sm neat" id="addBankCardPassword"
-                                           placeholder=""
-                                           type="">
+                                    <input class="form-control input-sm neat" id="addBankCardPassword">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3 control-label">确认密码：</label>
                                 <div class="col-xs-8">
-                                    <input class="form-control input-sm neat" id="addBankCardRepeatPassword"
-                                           placeholder=""
-                                           type="">
+                                    <input class="form-control input-sm neat" id="addBankCardRepeatPassword">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-xs-3 control-label">所属银行：</label>
                                 <div class="col-xs-8">
-                                    <select class=" form-control select-neat">
+                                    <select class=" form-control select-neat" id="bankSelect">
                                         <option value="">中国银行</option>
                                         <option value="">建设银行</option>
                                         <option value="">工商银行</option>
@@ -116,7 +110,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-xs btn-white" data-dismiss="modal" type="button">取 消</button>
-                    <button class="btn btn-xs btn-green" type="button">确 认</button>
+                    <button class="btn btn-xs btn-green" onclick="addBankCard()" type="button">确 认</button>
                 </div>
             </div>
             <!-- /.modal-content -->

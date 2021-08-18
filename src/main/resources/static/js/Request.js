@@ -365,3 +365,38 @@ function transferMoney() {
         }
     });
 }
+
+function addBankCard() {
+    const newPassword = document.getElementById("addBankCardPassword").value;
+    const repeatPassword = document.getElementById("addBankCardRepeatPassword").value;
+    const addBankCardNumber = document.getElementById("addBankCardNumber").value;
+    const obj = document.getElementById("bankSelect"); //定位id
+    const index = obj.selectedIndex; // 选中索引
+    const bank = obj.options[index].text; // 选中值
+    console.log(newPassword + " " + addBankCardNumber + " " + bank);
+    if (newPassword === repeatPassword) {
+        $.ajax({
+            url: '/addBankCard',
+            data:
+                {
+                    "newPassword": newPassword,
+                    "addBankCardNumber": addBankCardNumber,
+                    "bank": bank
+                },
+            dataType: "text",
+            type: "get",
+            error: function (data) {
+                console.log(data);
+                alert("添加失败");
+            },
+            success: function (data) {
+                console.log(data);
+                alert("添加成功");
+            }
+        });
+    } else {
+        alert("两次密码不一致");
+        document.getElementById("addBankCardPassword").value = "";
+        document.getElementById("addBankCardRepeatPassword").value = "";
+    }
+}

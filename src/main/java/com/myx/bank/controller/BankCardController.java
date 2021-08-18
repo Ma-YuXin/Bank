@@ -2,6 +2,7 @@ package com.myx.bank.controller;
 
 import com.myx.bank.dao.BankCardImpl;
 import com.myx.bank.dao.UserBankCardImpl;
+import com.myx.bank.pojo.BankCard;
 import com.myx.bank.pojo.BankCardManage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -98,4 +99,18 @@ public class BankCardController {
         return "转账成功";
     }
 
+    @RequestMapping("/addBankCard")
+    public String addBankCard(HttpServletRequest httpServletRequest) {
+        int userId = Integer.parseInt((String) httpServletRequest.getSession().getAttribute("loginUserId"));
+        System.out.println("接受到转账请求,ID为：" + userId);
+        String newPassword = httpServletRequest.getParameter("newPassword");
+        String addBankCardNumber = httpServletRequest.getParameter("addBankCardNumber");
+        String bank = httpServletRequest.getParameter("bank");
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("userid", userId);
+        map.put("bankcardnumber", addBankCardNumber);
+        new UserBankCardImpl().addBankCard(map);
+        new BankCardImpl().addBankCard(new BankCard(Integer.parseInt(addBankCardNumber), newPassword, 0, bank));
+        return "添加银行卡成功";
+    }
 }

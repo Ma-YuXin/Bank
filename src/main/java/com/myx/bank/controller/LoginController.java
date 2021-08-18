@@ -33,7 +33,7 @@ public class LoginController {
             httpSession.setAttribute("loginUserName", user.getName());
             httpSession.setAttribute("loginUserPhoneNumber", user.getPhoneNumber());
             httpSession.setAttribute("loginUserAddress", user.getAddress());
-
+            httpSession.setAttribute("loginUserPassword", password);
             return "redirect:/index.html";//与templates中index.html对应
 
         }

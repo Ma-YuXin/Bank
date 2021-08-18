@@ -62,7 +62,7 @@ public class HistoryBillDaoTest {
 
     @Test
     public void deleteHistoryBill() {
-        historyBill.deleteHistoryBill(new Bill(100, 102, 12.3, "转账"));
+        historyBill.deleteHistoryBill(new Bill(100, 137, 577899, "转账"));
 //        historyBill.deleteHistoryBill(new Bill(102, 100, 12.3, "取款"));
 //        Bill bill1 = new Bill();
 //        bill1.setpayee(100);

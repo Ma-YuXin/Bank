@@ -36,6 +36,16 @@
         where bankcardnumber = #{bankcardnumber}
 
     </delete>
+    <update id="changeInformation" parameterType="Map">
+        update bankcard
+        set password=#{password}
+        where bankcardNumber = #{bankcardNumber}
+    </update>
 
+    <update id="changeRemainingBalance" parameterType="Map">
+        update bankcard
+        set remaining_balance=remaining_balance + #{number}
+        where bankcardNumber = #{bankcardNumber}
+    </update>
 
 </mapper>

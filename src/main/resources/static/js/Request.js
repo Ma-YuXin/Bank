@@ -29,37 +29,49 @@ function bankcard() {
                         "<div class =\"col-xs-2\">" + data[i].remainingBalance + "</div>" +
                         "<div class=\"col-xs-2\">";
                     $("#bankCardManageList").append(str +
-                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" data-target = \"#modifyBankCard\" data-toggle = \"modal\">" +
+                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" onclick=\"getBankcardNumber(this)\"  data-target = \"#modifyBankCard\" data-toggle = \"modal\">" +
                         "修改" +
                         "</button>" +
-                        "<button class = \"btn" + " " + "btn-danger" + " " + "btn-xs\" data-target = \"#deleteBankCard\" data-toggle = \"modal\" >" +
+                        "<button class = \"btn" + " " + "btn-danger" + " " + "btn-xs\" onclick=\"getBankcardNumber(this)\" data-target = \"#deleteBankCard\" data-toggle = \"modal\" >" +
                         "删除" +
                         "</button>" +
                         "</div>" +
                         "</div>");
 
                     $("#bankCardListDeposit").append(str +
-                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" data-target = \"#reviseSchool\" data-toggle = \"modal\">" +
+                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" onclick=\"getBankcardNumber(this)\" data-target = \"#reviseSchool\" data-toggle = \"modal\">" +
                         "存款" +
                         "</button>" + "</div>" +
                         "</div>");
 
                     $("#bankCardListWithdraw").append(str +
-                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" data-target = \"#withdrawMoney\" data-toggle = \"modal\">" +
+                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" onclick=\"getBankcardNumber(this)\"  data-target = \"#withdrawMoney\" data-toggle = \"modal\">" +
                         "取款" +
                         "</button>" + "</div>" +
                         "</div>");
 
                     $("#bankCardListTransfer").append(str +
-                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" data-target = \"#transferDetial\" data-toggle = \"modal\">" +
+                        "<button class=\"btn" + " " + "btn-success" + " " + "btn-xs\" onclick=\"getBankcardNumber(this)\"  data-target = \"#transferDetial\" data-toggle = \"modal\">" +
                         "转账" +
                         "</button>" + "</div>" +
                         "</div>");
                 }
             }
         }
-    )
-    ;
+    );
+}
+
+
+function getBankcardNumber(obj) {
+    window.bankcardManageNumber = obj.parentNode.parentNode.children.item(2).textContent;
+    // console.log(window.bankcardManageNumber + " 4");
+    window.remainingBalance = obj.parentNode.parentNode.children.item(4).textContent;
+}
+
+function getBillInformation(param) {
+    window.billBalance = param.parentNode.parentNode.children.item(5).textContent;
+    window.billType = param.parentNode.parentNode.children.item(0).textContent;
+    console.log(billBalance + " " + billType);
 }
 
 function historyBill() {
@@ -83,7 +95,7 @@ function historyBill() {
                     "<div class =\"col-xs-2\">" + data[i].payee + "</div>" +
                     "<div class =\"col-xs-2\">" + data[i].value + "</div>" +
                     "<div class=\"col-xs-1\">" +
-                    "<button class=\"btn" + " " + "btn-danger" + " " + "btn-xs\" data-target = \"#deleteHistory\" data-toggle = \"modal\">" +
+                    "<button class=\"btn" + " " + "btn-danger" + " " + "btn-xs\" onclick=\"getBillInformation(this)\" data-target = \"#deleteHistory\" data-toggle = \"modal\">" +
                     "删除记录" +
                     "</button>" +
                     "</div>" +
@@ -100,7 +112,7 @@ function changeSingle() {
     const changeSingleValue = document.getElementById("changeSingleValue").value;
 
 
-    if (state == "name") {
+    if (state === "name") {
         console.log("进入修改姓名模块");
         $.ajax({
             url: '/changeNameSingle',
@@ -117,7 +129,7 @@ function changeSingle() {
                 alert("修改姓名成功")
             }
         });
-    } else if (state == "address") {
+    } else if (state === "address") {
         console.log("进入修改地址模块");
         $.ajax({
             url: '/changeAddressSingle',
@@ -134,7 +146,7 @@ function changeSingle() {
                 alert("修改地址成功")
             }
         });
-    } else if (state == "phoneNumber") {
+    } else if (state === "phoneNumber") {
         console.log("进入修改电话模块");
         $.ajax({
             url: '/changeTelephoneNumberSingle',
@@ -189,7 +201,7 @@ function changePassword() {
     const newPassword = document.getElementById("newPassword").value;
     const repeatPassword = document.getElementById("repeatPassword").value;
 
-    if (newPassword == repeatPassword) {
+    if (newPassword === repeatPassword) {
         $.ajax({
             url: '/changePassword',
             data: {
@@ -213,4 +225,143 @@ function changePassword() {
         document.getElementById("newPassword").value = "";
         document.getElementById("repeatPassword").value = "";
     }
+}
+
+function changeBankcardPassword() {
+    const newPassword = document.getElementById("modifyBankCardPassword").value;
+    const repeatPassword = document.getElementById("modifyRepeatBankCardPassword").value;
+
+    if (newPassword === repeatPassword) {
+        $.ajax({
+            url: '/changeBankcardPassword',
+            data: {
+                "bankcardNumber": window.bankcardManageNumber,
+                "newPassword": newPassword,
+                "repeatPassword": repeatPassword
+            },
+            dataType: 'text',
+            type: 'get',
+            error: function (data) {
+                alert("修改卡号为" + window.bankcardManageNumber + "密码失败！！！")
+                console.log(data);
+            },
+            success: function (data) {
+                console.log(data);
+                alert("修改卡号为" + window.bankcardManageNumber + "密码成功")
+            }
+        });
+    } else {
+        alert("两次密码不一致");
+        document.getElementById("modifyBankCardPassword").value = "";
+        document.getElementById("modifyRepeatBankCardPassword").value = "";
+    }
+}
+
+function deleteBankcard() {
+    $.ajax({
+        url: '/deleteBankcard',
+        data: {
+            "bankcardNumber": window.bankcardManageNumber
+        },
+        dataType: 'text',
+        type: 'get',
+        error: function (data) {
+            alert("删除卡号为" + window.bankcardManageNumber + "的银行卡失败！！！")
+            console.log(data);
+        },
+        success: function (data) {
+            console.log(data);
+            alert("删除卡号为" + window.bankcardManageNumber + "的银行卡成功")
+        }
+    });
+}
+
+function depositMoney() {
+    const number = document.getElementById("depositNumber").value;
+    $.ajax({
+        url: '/depositMoney',
+        data: {
+            "bankcardNumber": window.bankcardManageNumber,
+            "number": number
+        },
+        dataType: 'text',
+        type: 'get',
+        error: function (data) {
+            alert("向卡号为" + window.bankcardManageNumber + "的银行卡存款失败！！！")
+            console.log(data);
+        },
+        success: function (data) {
+            console.log(data);
+            alert("成功向卡号为" + window.bankcardManageNumber + "的银行卡存入" + number + "元")
+        }
+    });
+}
+
+function withdrawMoney(obj) {
+    const number = document.getElementById("withdrawNumber").value;
+    if (parseFloat(window.remainingBalance) >= parseFloat(number)) {
+        $.ajax({
+            url: '/withdrawNumber',
+            data: {
+                "bankcardNumber": window.bankcardManageNumber,
+                "number": number
+            },
+            dataType: 'text',
+            type: 'get',
+            error: function (data) {
+                alert("向卡号为" + window.bankcardManageNumber + "的银行卡取款失败！！！")
+                console.log(data);
+            },
+            success: function (data) {
+                console.log(data);
+                alert("成功从卡号为" + window.bankcardManageNumber + "的银行卡取出" + number + "元")
+            }
+        });
+    } else {
+        alert("余额不足！！");
+    }
+
+}
+
+function deleteHistoryBill() {
+    $.ajax({
+        url: '/deleteHistoryBill',
+        data: {
+            "balance": window.billBalance,
+            "type": window.billType
+        },
+        dataType: 'text',
+        type: 'get',
+        error: function (data) {
+            alert("删除订单失败！！！")
+            console.log(data);
+        },
+        success: function (data) {
+            console.log(data);
+            alert("删除订单成功！！！")
+        }
+    });
+}
+
+function transferMoney() {
+    const transferNumber = document.getElementById("transferNumber").value;
+    const receiverBankCardNumber = document.getElementById("receiverBankCardNumber").value;
+    $.ajax({
+        url: '/transferMoney',
+        data: {
+            "sender": window.bankcardManageNumber,
+            "money": transferNumber,
+            "payee": receiverBankCardNumber
+        },
+        dataType: "text",
+        type: "get",
+        error: function (data) {
+            console.log(data);
+            alert("转账失败");
+        },
+        success: function (data) {
+            console.log(data);
+            alert("转账成功");
+        }
+    });
 }

@@ -38,8 +38,8 @@
     <delete id="deleteHistoryBill" parameterType="com.myx.bank.pojo.Bill">
         delete
         from bill
-        where sender = #{sender}
-          and payee = #{payee}
+        where (sender = #{sender}
+            or payee = #{sender})
           and value = #{value}
           and type = #{type}
     </delete>

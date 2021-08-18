@@ -1,4 +1,5 @@
 package com.myx.bank.pojo;
+
 /**
  * description: Bill <br>
  * date: 2021/8/6 22:19 <br>
@@ -18,6 +19,12 @@ public class Bill {
     public Bill(int sender, int payee, double value, String type) {
         this.sender = sender;
         this.payee = payee;
+        this.value = value;
+        this.type = type;
+    }
+
+    public Bill(int sender, double value, String type) {
+        this.sender = sender;
         this.value = value;
         this.type = type;
     }

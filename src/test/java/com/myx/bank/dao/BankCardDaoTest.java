@@ -5,7 +5,9 @@ import com.myx.bank.pojo.BankCard;
 import com.myx.bank.pojo.BankCardManage;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * description: BankCardDaoTest <br>
@@ -35,11 +37,28 @@ public class BankCardDaoTest {
 
     @Test
     public void addBankCardTest() {
-        bankCardImpl.addBankCard(new BankCard(1234567,"12341",134.234, Bank.建设银行.toString()));
+        bankCardImpl.addBankCard(new BankCard(1234567, "12341", 134.234, Bank.建设银行.toString()));
     }
 
     @Test
     public void deleteBankCardTest() {
         bankCardImpl.deleteBankCard(1234567);
     }
+
+    @Test
+    void changeInformation() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("password", "111111");
+        map.put("bankcardNumber", "101800680");
+        bankCardImpl.changeInformation(map);
+    }
+
+    @Test
+    void changeRemainingBalance() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("bankcardNumber", "101800680");
+        map.put("number", -1000);
+        bankCardImpl.changeRemainingBalance(map);
+    }
+
 }

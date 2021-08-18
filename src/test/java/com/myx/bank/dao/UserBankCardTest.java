@@ -25,8 +25,8 @@ public class UserBankCardTest {
     @Test
     public void deleteBankCardTest() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("userid", 100);
-        map.put("bankcardnumber", 1234523525);
+        map.put("userid", 123);
+        map.put("bankcardnumber", 471051221);
         userBankCardImpl.deleteBankCard(map);
     }
 }

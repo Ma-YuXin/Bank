@@ -76,12 +76,15 @@ public class ChangeInformation {
     }
 
     @RequestMapping("/changePassword")
-    public String changePassword(HttpServletRequest httpServletRequest) {
+    public String changePassword(HttpServletRequest httpServletRequest, HttpSession httpSession) {
         Map<String, Object> map = new HashMap<String, Object>();
+        String newPassword = httpServletRequest.getParameter("newPassword");
         map.put("id", httpServletRequest.getSession().getAttribute("loginUserId"));
-        map.put("password", httpServletRequest.getParameter("newPassword"));
+        map.put("password", newPassword);
         userImpl.changePassword(map);
-        System.out.println("接受到修改用户密码请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId") + " 密码将改为： " + httpServletRequest.getParameter("newPassword"));
+        System.out.println("接受到修改用户密码请求,ID为：" + httpServletRequest.getSession().getAttribute("loginUserId") + " 密码将改为： " + newPassword);
+        httpSession.setAttribute("loginUserPassword", newPassword);
+
         return "修改成功";
     }
 }

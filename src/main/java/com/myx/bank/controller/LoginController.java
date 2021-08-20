@@ -29,13 +29,17 @@ public class LoginController {
             model.addAttribute("message", "用户名或密码为空！！！");
             return "login";//与templates中login.html对应
         } else {
-            httpSession.setAttribute("loginUserId", username);
-            httpSession.setAttribute("loginUserName", user.getName());
-            httpSession.setAttribute("loginUserPhoneNumber", user.getPhoneNumber());
-            httpSession.setAttribute("loginUserAddress", user.getAddress());
-            httpSession.setAttribute("loginUserPassword", password);
-            return "redirect:/index.html";//与templates中index.html对应
-
+            if (user.getPassword().equals(password)) {
+                httpSession.setAttribute("loginUserId", username);
+                httpSession.setAttribute("loginUserName", user.getName());
+                httpSession.setAttribute("loginUserPhoneNumber", user.getPhoneNumber());
+                httpSession.setAttribute("loginUserAddress", user.getAddress());
+                httpSession.setAttribute("loginUserPassword", password);
+                return "redirect:/index.html";//与templates中index.html对应
+            } else {
+                model.addAttribute("message", "用户名或密码不正确！！！");
+                return "login";//与templates中login.html对应
+            }
         }
     }
 
